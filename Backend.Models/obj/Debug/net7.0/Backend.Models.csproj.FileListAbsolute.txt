@@ -1,0 +1,17 @@
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.csproj.AssemblyReference.cache
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.AssemblyInfoInputs.cache
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.AssemblyInfo.cs
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.csproj.CoreCompileInputs.cache
+C:\temp\amazonsofvolleyball\Backend.Models\bin\Debug\net7.0\Backend.Models.deps.json
+C:\temp\amazonsofvolleyball\Backend.Models\bin\Debug\net7.0\Backend.Models.runtimeconfig.json
+C:\temp\amazonsofvolleyball\Backend.Models\bin\Debug\net7.0\Backend.Models.dll
+C:\temp\amazonsofvolleyball\Backend.Models\bin\Debug\net7.0\Backend.Models.pdb
+C:\temp\amazonsofvolleyball\Backend.Models\bin\Debug\net7.0\Backend.Database.dll
+C:\temp\amazonsofvolleyball\Backend.Models\bin\Debug\net7.0\Backend.Database.pdb
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.csproj.CopyComplete
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.dll
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\refint\Backend.Models.dll
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.pdb
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\Backend.Models.genruntimeconfig.cache
+C:\temp\amazonsofvolleyball\Backend.Models\obj\Debug\net7.0\ref\Backend.Models.dll

@@ -1,0 +1,14 @@
+C:\temp\amazonsofvolleyball\Backend.Common\bin\Debug\net7.0\Backend.Common.deps.json
+C:\temp\amazonsofvolleyball\Backend.Common\bin\Debug\net7.0\Backend.Common.runtimeconfig.json
+C:\temp\amazonsofvolleyball\Backend.Common\bin\Debug\net7.0\Backend.Common.dll
+C:\temp\amazonsofvolleyball\Backend.Common\bin\Debug\net7.0\Backend.Common.pdb
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\Backend.Common.csproj.AssemblyReference.cache
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\Backend.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\Backend.Common.AssemblyInfoInputs.cache
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\Backend.Common.AssemblyInfo.cs
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\Backend.Common.csproj.CoreCompileInputs.cache
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\Backend.Common.dll
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\refint\Backend.Common.dll
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\Backend.Common.pdb
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\Backend.Common.genruntimeconfig.cache
+C:\temp\amazonsofvolleyball\Backend.Common\obj\Debug\net7.0\ref\Backend.Common.dll
