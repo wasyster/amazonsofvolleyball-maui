@@ -12889,11 +12889,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\temp\\amazonsofvolleyball\\Backend.Infrastructure\\Backend.Infrastructure.csproj",
+      "projectUniqueName": "E:\\amazonsofvolleyball\\Backend.Infrastructure\\Backend.Infrastructure.csproj",
       "projectName": "Backend.Infrastructure",
-      "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Infrastructure\\Backend.Infrastructure.csproj",
+      "projectPath": "E:\\amazonsofvolleyball\\Backend.Infrastructure\\Backend.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\ati\\.nuget\\packages\\",
-      "outputPath": "C:\\temp\\amazonsofvolleyball\\Backend.Infrastructure\\obj\\",
+      "outputPath": "E:\\amazonsofvolleyball\\Backend.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\DevelopmentTools\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
@@ -12915,11 +12915,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\temp\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj"
             },
-            "C:\\temp\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj"
             }
           }
         }

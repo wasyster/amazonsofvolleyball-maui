@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9sajQjBfGK37GTpvABZtqAwCYg3S8Tmhj4cGWkaIerOCc+e14r/NM+oqfcFocV/LxhpE61r9PM2inR0KPTuVpw==",
+  "dgSpecHash": "rd3IV639cABRWEk5iyS6jHR3QHf9n1wLuaHmy8Wh5IGL6hCKgWAjXys/lknJxDCFiRUuSXJYeiMesg48/ppBKw==",
   "success": true,
-  "projectFilePath": "C:\\temp\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj",
+  "projectFilePath": "E:\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ati\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ati\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

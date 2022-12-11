@@ -13120,11 +13120,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\temp\\amazonsofvolleyball\\Backend.WebAPI\\Backend.WebAPI.csproj",
+      "projectUniqueName": "E:\\amazonsofvolleyball\\Backend.WebAPI\\Backend.WebAPI.csproj",
       "projectName": "Backend.WebAPI",
-      "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.WebAPI\\Backend.WebAPI.csproj",
+      "projectPath": "E:\\amazonsofvolleyball\\Backend.WebAPI\\Backend.WebAPI.csproj",
       "packagesPath": "C:\\Users\\ati\\.nuget\\packages\\",
-      "outputPath": "C:\\temp\\amazonsofvolleyball\\Backend.WebAPI\\obj\\",
+      "outputPath": "E:\\amazonsofvolleyball\\Backend.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\DevelopmentTools\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
@@ -13146,14 +13146,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\temp\\amazonsofvolleyball\\Backend.Middleware\\Backend.Middleware.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Middleware\\Backend.Middleware.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Middleware\\Backend.Middleware.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Middleware\\Backend.Middleware.csproj"
             },
-            "C:\\temp\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj"
             },
-            "C:\\temp\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj"
             }
           }
         }

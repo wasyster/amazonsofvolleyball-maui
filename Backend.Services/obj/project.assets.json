@@ -12947,11 +12947,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\temp\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj",
+      "projectUniqueName": "E:\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj",
       "projectName": "Backend.Services",
-      "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj",
+      "projectPath": "E:\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj",
       "packagesPath": "C:\\Users\\ati\\.nuget\\packages\\",
-      "outputPath": "C:\\temp\\amazonsofvolleyball\\Backend.Services\\obj\\",
+      "outputPath": "E:\\amazonsofvolleyball\\Backend.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\DevelopmentTools\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
@@ -12973,14 +12973,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\temp\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj"
             },
-            "C:\\temp\\amazonsofvolleyball\\Backend.Infrastructure\\Backend.Infrastructure.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Infrastructure\\Backend.Infrastructure.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Infrastructure\\Backend.Infrastructure.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Infrastructure\\Backend.Infrastructure.csproj"
             },
-            "C:\\temp\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj"
             }
           }
         }

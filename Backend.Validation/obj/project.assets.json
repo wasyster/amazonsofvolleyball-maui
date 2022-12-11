@@ -12888,11 +12888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\temp\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj",
+      "projectUniqueName": "E:\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj",
       "projectName": "Backend.Validation",
-      "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj",
+      "projectPath": "E:\\amazonsofvolleyball\\Backend.Validation\\Backend.Validation.csproj",
       "packagesPath": "C:\\Users\\ati\\.nuget\\packages\\",
-      "outputPath": "C:\\temp\\amazonsofvolleyball\\Backend.Validation\\obj\\",
+      "outputPath": "E:\\amazonsofvolleyball\\Backend.Validation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\DevelopmentTools\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
@@ -12914,8 +12914,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\temp\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj": {
-              "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj"
+            "E:\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj": {
+              "projectPath": "E:\\amazonsofvolleyball\\Backend.Models\\Backend.Models.csproj"
             }
           }
         }

@@ -12776,11 +12776,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\temp\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj",
+      "projectUniqueName": "E:\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj",
       "projectName": "Backend.Database",
-      "projectPath": "C:\\temp\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj",
+      "projectPath": "E:\\amazonsofvolleyball\\Backend.Database\\Backend.Database.csproj",
       "packagesPath": "C:\\Users\\ati\\.nuget\\packages\\",
-      "outputPath": "C:\\temp\\amazonsofvolleyball\\Backend.Database\\obj\\",
+      "outputPath": "E:\\amazonsofvolleyball\\Backend.Database\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\DevelopmentTools\\MicrosoftVisualStudio\\Shared\\NuGetPackages"
