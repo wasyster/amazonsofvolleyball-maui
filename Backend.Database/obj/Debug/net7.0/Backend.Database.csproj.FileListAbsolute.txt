@@ -12,17 +12,3 @@ C:\temp\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\refint\Backend.Dat
 C:\temp\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.pdb
 C:\temp\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.genruntimeconfig.cache
 C:\temp\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\ref\Backend.Database.dll
-E:\amazonsofvolleyball\Backend.Database\bin\Debug\net7.0\Backend.Database.deps.json
-E:\amazonsofvolleyball\Backend.Database\bin\Debug\net7.0\Backend.Database.runtimeconfig.json
-E:\amazonsofvolleyball\Backend.Database\bin\Debug\net7.0\Backend.Database.dll
-E:\amazonsofvolleyball\Backend.Database\bin\Debug\net7.0\Backend.Database.pdb
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.csproj.AssemblyReference.cache
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.GeneratedMSBuildEditorConfig.editorconfig
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.AssemblyInfoInputs.cache
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.AssemblyInfo.cs
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.csproj.CoreCompileInputs.cache
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.dll
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\refint\Backend.Database.dll
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.pdb
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\Backend.Database.genruntimeconfig.cache
-E:\amazonsofvolleyball\Backend.Database\obj\Debug\net7.0\ref\Backend.Database.dll
