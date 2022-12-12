@@ -2,7 +2,8 @@
 
 public class PlayerClient : BaseClient, IPlayerClient
 {
-    public PlayerClient(HttpClient httpClient, IOptions<MobileAppSettings> settings): base(httpClient, settings.Value)
+    public PlayerClient(HttpClient httpClient, IHttpsClientHandlerService httpClientService, IOptions<MobileAppSettings> settings) :
+           base(httpClient, httpClientService, settings.Value)
     {}
 
     public async Task<List<PlayerModel>> GetAllAsync()

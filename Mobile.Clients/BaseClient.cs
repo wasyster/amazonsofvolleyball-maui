@@ -5,10 +5,19 @@ public abstract class BaseClient
     private readonly HttpClient httpClient;
     private readonly MobileAppSettings settings;
 
-    protected BaseClient(HttpClient httpClient, MobileAppSettings settings)
+    protected BaseClient(HttpClient httpClient, IHttpsClientHandlerService httpClientService, MobileAppSettings settings)
     {
-        this.httpClient = httpClient;
         this.settings = settings;
+
+#if DEBUG    
+        var handler = httpClientService.GetPlatformMessageHandler();
+        if (handler != null)
+            this.httpClient = new HttpClient(handler);
+        else
+            this.httpClient = httpClient;
+#else
+            this.httpClient = httpClient;
+#endif
     }
 
     /// <summary>

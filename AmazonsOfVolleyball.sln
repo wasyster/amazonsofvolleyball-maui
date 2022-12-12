@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31710.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mobile.App", "Mobile.App\Mobile.App.csproj", "{7C646930-0289-49D6-BBEC-107B9167CB95}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mobile.Clients", "Mobile.Clients\Mobile.Clients.csproj", "{0911618D-BB38-4B2B-A210-FF778F2E4A4B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.WebAPI", "Backend.WebAPI\Backend.WebAPI.csproj", "{71F573B3-818F-45E9-8251-A264213322A1}"
@@ -21,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Infrastructure", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend.Database", "Backend.Database\Backend.Database.csproj", "{E6B43977-441A-47CE-A8F5-2099405BD8F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile.UI", "Mobile.UI\Mobile.UI.csproj", "{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,15 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.LamaDebug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.LamaDebug|Any CPU.Build.0 = Debug|Any CPU
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.LamaDebug|Any CPU.Deploy.0 = Debug|Any CPU
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C646930-0289-49D6-BBEC-107B9167CB95}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{0911618D-BB38-4B2B-A210-FF778F2E4A4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0911618D-BB38-4B2B-A210-FF778F2E4A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0911618D-BB38-4B2B-A210-FF778F2E4A4B}.LamaDebug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -85,6 +76,15 @@ Global
 		{E6B43977-441A-47CE-A8F5-2099405BD8F1}.LamaDebug|Any CPU.Build.0 = LamaDebug|Any CPU
 		{E6B43977-441A-47CE-A8F5-2099405BD8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6B43977-441A-47CE-A8F5-2099405BD8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.LamaDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.LamaDebug|Any CPU.Build.0 = Debug|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.LamaDebug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A63B7E5-0162-4FD0-AB20-E8997B9829FC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
