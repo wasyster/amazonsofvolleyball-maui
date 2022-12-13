@@ -1,4 +1,6 @@
-﻿namespace Mobile.UI
+﻿using Foundation;
+
+namespace Mobile.UI
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

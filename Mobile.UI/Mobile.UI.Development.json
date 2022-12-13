@@ -1,0 +1,8 @@
+{
+  "MobileAppSettings": {
+    "AndroidBaseURL": "http://10.0.2.2:5001",
+    "IosBaseURL": "http://localhost:5001",
+    "WindowsBaseURL": "https://localhost:5000",
+    "MacBaseURL": "https://localhost:5000"
+  }
+}

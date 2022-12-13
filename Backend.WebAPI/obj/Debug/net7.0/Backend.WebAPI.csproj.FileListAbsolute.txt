@@ -152,6 +152,7 @@ E:\amazonsofvolleyball\Backend.WebAPI\bin\Debug\net7.0\Microsoft.EntityFramework
 E:\amazonsofvolleyball\Backend.WebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Proxies.dll
 E:\amazonsofvolleyball\Backend.WebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 E:\amazonsofvolleyball\Backend.WebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\amazonsofvolleyball\Backend.WebAPI\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Binder.dll
 E:\amazonsofvolleyball\Backend.WebAPI\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 E:\amazonsofvolleyball\Backend.WebAPI\bin\Debug\net7.0\Microsoft.Identity.Client.dll
 E:\amazonsofvolleyball\Backend.WebAPI\bin\Debug\net7.0\Microsoft.Identity.Client.Extensions.Msal.dll

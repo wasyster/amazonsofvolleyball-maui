@@ -1,4 +1,4 @@
-﻿namespace Mobile.Clients;
+﻿namespace Mobile.UI.Clients;
 
 public class HttpsClientHandlerService : IHttpsClientHandlerService
 {

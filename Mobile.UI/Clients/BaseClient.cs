@@ -1,11 +1,19 @@
-﻿namespace Mobile.Clients;
+﻿namespace Mobile.UI.Clients;
 
 public abstract class BaseClient
 {
     private readonly HttpClient httpClient;
     private readonly MobileAppSettings settings;
 
-    protected BaseClient(HttpClient httpClient, IHttpsClientHandlerService httpClientService, MobileAppSettings settings)
+    private string BaseURL
+    {
+        get
+        {
+            return DeviceInfo.Platform == DevicePlatform.Android ? this.settings.AndroidBaseURL : this.settings.IosBaseURL;
+        }
+    }
+
+    protected BaseClient(IHttpsClientHandlerService httpClientService, MobileAppSettings settings)
     {
         this.settings = settings;
 
@@ -14,9 +22,9 @@ public abstract class BaseClient
         if (handler != null)
             this.httpClient = new HttpClient(handler);
         else
-            this.httpClient = httpClient;
+            this.httpClient = new HttpClient();
 #else
-            this.httpClient = httpClient;
+            this.httpClient = new HttpClient();
 #endif
     }
 
@@ -31,7 +39,7 @@ public abstract class BaseClient
     {
         try
         {
-            var uri = new Uri(Path.Combine(settings.BaseURL, route));
+            var uri = new Uri(Path.Combine(BaseURL, route));
 
             var response = await httpClient.GetAsync(uri);
 
@@ -61,7 +69,7 @@ public abstract class BaseClient
     {
         try
         {
-            var uri = new Uri(Path.Combine(settings.BaseURL, route, $"{routParam}"));
+            var uri = new Uri(Path.Combine(BaseURL, route, $"{routParam}"));
 
             var response = await httpClient.GetAsync(uri);
 

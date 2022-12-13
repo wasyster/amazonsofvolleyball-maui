@@ -21,6 +21,7 @@ global using Microsoft.Extensions.Caching.Memory;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.OpenApi.Models;
+global using System.Text.Json.Serialization;
 
 global using Backend.Models.Common;
 global using Backend.Models.Options;
@@ -32,4 +33,6 @@ global using Backend.Database;
 global using Backend.Models.Settings;
 global using Backend.Infrastructure.Interfaces.Common;
 global using Backend.Middleware.HealthStatuses;
-global using Backend.Models.Settings;
+global using Backend.Infrastructure.Interfaces.Services;
+global using Backend.Middleware.Providers;
+global using Backend.Services;

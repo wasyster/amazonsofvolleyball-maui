@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GV9DGaXzX0+QMosHjkMz8tTAdT1JpmgXO8Q/XknwC0xzw5a3S6HsTLtWy+25IftpLjcIsuUrxbotDOBawmn43w==",
+  "dgSpecHash": "5bsYvdNue791SrdmrDCzbHXrK/cGitAE88l6NhDyzcUs7Yk6PIms0QuENBTKxnnGj5DL+StCl1+rC7gyZY8caA==",
   "success": true,
   "projectFilePath": "E:\\amazonsofvolleyball\\Backend.Services\\Backend.Services.csproj",
   "expectedPackageFiles": [
@@ -87,7 +87,7 @@
     "C:\\Users\\ati\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\ati\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\ati\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\ati\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.0\\microsoft.extensions.configuration.binder.7.0.0.nupkg.sha512",
+    "C:\\Users\\ati\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.1\\microsoft.extensions.configuration.binder.7.0.1.nupkg.sha512",
     "C:\\Users\\ati\\.nuget\\packages\\microsoft.extensions.configuration.commandline\\7.0.0\\microsoft.extensions.configuration.commandline.7.0.0.nupkg.sha512",
     "C:\\Users\\ati\\.nuget\\packages\\microsoft.extensions.configuration.environmentvariables\\7.0.0\\microsoft.extensions.configuration.environmentvariables.7.0.0.nupkg.sha512",
     "C:\\Users\\ati\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\7.0.0\\microsoft.extensions.configuration.fileextensions.7.0.0.nupkg.sha512",

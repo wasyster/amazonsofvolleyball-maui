@@ -7,7 +7,7 @@ public static class ConfigurationOfLoadSettings
         var assembly = Assembly.GetExecutingAssembly();
 
 #if DEBUG
-        using var stream = assembly.GetManifestResourceStream("appsettings.Development.json");
+        using var stream = assembly.GetManifestResourceStream("Mobile.UI.Development.json");
 #else
         using var stream = assembly.GetManifestResourceStream("appsettings.Production.json");
 #endif

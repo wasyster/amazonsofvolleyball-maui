@@ -1,4 +1,6 @@
-﻿namespace Mobile.UI
+﻿using UIKit;
+
+namespace Mobile.UI
 {
     public class Program
     {

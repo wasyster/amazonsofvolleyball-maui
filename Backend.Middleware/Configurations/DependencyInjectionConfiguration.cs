@@ -1,11 +1,4 @@
-﻿using Backend.Infrastructure.Interfaces.Services;
-using Backend.Middleware.Providers;
-using System.Text.Json.Serialization;
-
-using Backend.Infrastructure.Interfaces.Services;
-using Backend.Services;
-
-namespace Backend.Middleware.Configurations;
+﻿namespace Backend.Middleware.Configurations;
 
 public static class ConfigureDependencyInjection
 {

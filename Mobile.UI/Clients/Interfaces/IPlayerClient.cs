@@ -1,4 +1,4 @@
-﻿namespace Mobile.Clients.Interfaces;
+﻿namespace Mobile.UI.Interfaces;
 
 public interface IPlayerClient
 {

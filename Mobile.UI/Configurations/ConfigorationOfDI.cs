@@ -7,7 +7,5 @@ public static class ConfigorationOfDI
         builder.Services.AddTransient<IPlayerClient, PlayerClient>();
         builder.Services.AddTransient<IHttpsClientHandlerService, HttpsClientHandlerService>();
 
-        // Add useful interface for accessing the HttpContext outside a controller.
-        builder.Services.AddHttpClient();
     }
 }
