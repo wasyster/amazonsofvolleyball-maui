@@ -1,4 +1,4 @@
-﻿namespace Backend.Infrastructure.Interfaces.Clients;
+﻿namespace Mobile.Clients.Interfaces;
 
 public interface IHttpsClientHandlerService
 {

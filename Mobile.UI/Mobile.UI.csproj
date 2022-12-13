@@ -54,7 +54,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Backend.Infrastructure\Backend.Infrastructure.csproj" />
 	  <ProjectReference Include="..\Backend.Models\Backend.Models.csproj" />
 	  <ProjectReference Include="..\Mobile.Clients\Mobile.Clients.csproj" />
 	</ItemGroup>
