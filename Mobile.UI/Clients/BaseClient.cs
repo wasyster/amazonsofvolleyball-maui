@@ -9,7 +9,9 @@ public abstract class BaseClient
     {
         get
         {
-            return DeviceInfo.Platform == DevicePlatform.Android ? this.settings.AndroidBaseURL : this.settings.IosBaseURL;
+            return DeviceInfo.Platform == DevicePlatform.Android ?
+                                          this.settings.AndroidBaseURL : 
+                                          this.settings.IosBaseURL;
         }
     }
 
@@ -40,8 +42,8 @@ public abstract class BaseClient
                 throw new Exception("Faild to fetch data.");
             }
 
-            var content = await response.Content.ReadAsStreamAsync();
-            return await JsonSerializer.DeserializeAsync<T>(content);
+            var content = await SerializeResponse<T>(response.Content);
+            return content;
         }
         catch (Exception ex)
         {
@@ -61,7 +63,7 @@ public abstract class BaseClient
     {
         try
         {
-            var uri = BuildUri(route, $"{routParam}");
+            var uri = BuildUri(route, routParam);
 
             var response = await httpClient.GetAsync(uri);
 
@@ -70,8 +72,9 @@ public abstract class BaseClient
                 throw new Exception("Faild to fetch data.");
             }
 
-            var content = await response.Content.ReadAsStreamAsync();
-            return await JsonSerializer.DeserializeAsync<T>(content);
+            var content = await SerializeResponse<T>(response.Content);
+            return content;
+
         }
         catch (Exception ex)
         {
@@ -82,15 +85,17 @@ public abstract class BaseClient
     private HttpClient BuildHttpClient(HttpClient httpClient)
     {
 #if DEBUG
-        var httpClientService = new HttpsClientHandlerService();
-        var handler = httpClientService.GetPlatformMessageHandler();
-        if (handler != null)
-            httpClient = new HttpClient(handler);
-        else
-            httpClient = new HttpClient();
-#else
-            httpClient = new HttpClient();
+        var handler = new HttpsClientHandlerService();
+        httpClient = new HttpClient(handler.GetPlatformMessageHandler());
 #endif
+
+        httpClient.BaseAddress = new Uri(BaseURL);
+
+        httpClient.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
+        httpClient.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate, br");
+
+        httpClient.DefaultRequestHeaders.Accept.Clear();
+        httpClient.DefaultRequestHeaders.Accept.Add(new("application/json"));
 
         return httpClient;
     }
@@ -103,6 +108,12 @@ public abstract class BaseClient
     private Uri BuildUri(string route, object routParam)
     {
         return new Uri(Path.Combine(BaseURL, settings.ApiVersion, route, $"{routParam}"));
+    }
+
+    private async Task<T> SerializeResponse<T>(HttpContent content)
+    {
+        var stream = await content.ReadAsStreamAsync();
+        return await JsonSerializer.DeserializeAsync<T>(stream);
     }
 }
 

@@ -1,9 +1,9 @@
 {
   "MobileAppSettings": {
-    "AndroidBaseURL": "https://10.0.2.2:5001",
-    "IosBaseURL": "https://localhost:5001",
-    "WindowsBaseURL": "https://localhost:5001",
-    "MacBaseURL": "https://localhost:5001",
-    "ApiVersion":  "v1"
+    "AndroidBaseURL": "https://10.0.2.2:5001/api",
+    "IosBaseURL": "https://localhost:5001/api",
+    "WindowsBaseURL": "https://localhost:5001/api",
+    "MacBaseURL": "https://localhost:5001/api",
+    "ApiVersion": "v1"
   }
 }
