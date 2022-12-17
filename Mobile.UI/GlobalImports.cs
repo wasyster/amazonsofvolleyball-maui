@@ -3,6 +3,7 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
 global using System.Text.Json;
+global using System.Text.Json.Nodes;
 
 global using Mobile.UI.Interfaces;
 global using Mobile.UI.Configurations;

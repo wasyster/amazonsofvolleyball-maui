@@ -4,15 +4,16 @@ public static class ConfigurationOfLoadSettings
 {
     public static void ConfigurationSettings(this MauiAppBuilder builder)
     {
-        var assembly = Assembly.GetExecutingAssembly();
-
 #if DEBUG
-        using var stream = assembly.GetManifestResourceStream("Mobile.UI.Development.json");
+        var file = "Mobile.UI.Development.json";
 #else
-        using var stream = assembly.GetManifestResourceStream("appsettings.Production.json");
+        var file = "Mobile.UI.Production.json";
 #endif
 
-        var config = new ConfigurationBuilder().AddJsonStream(stream).Build();
+        using var stream = FileSystem.OpenAppPackageFileAsync(file).Result;
+
+        var config = new ConfigurationBuilder().AddJsonStream(stream)
+                                               .Build();
 
         builder.Configuration.AddConfiguration(config);
     }
