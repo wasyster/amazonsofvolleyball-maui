@@ -104,6 +104,7 @@ StyleCopReport.xml
 *.scc
 *.metadata.*
 *.cache
+*.dll
 
 # Chutzpah Test files
 _Chutzpah*

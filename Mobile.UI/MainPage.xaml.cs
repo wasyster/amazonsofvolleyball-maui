@@ -1,24 +1,23 @@
-﻿namespace Mobile.UI
+﻿using Mobile.UI.Interfaces;
+
+namespace Mobile.UI
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private readonly IPlayerClient playerClient;
 
-        public MainPage()
+        public MainPage(IPlayerClient playerClient)
         {
             InitializeComponent();
+
+            this.playerClient = playerClient;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            count++;
+            base.OnAppearing();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            var result = playerClient.GetAllAsync().Result;
         }
     }
 }

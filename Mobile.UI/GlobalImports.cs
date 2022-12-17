@@ -4,6 +4,7 @@ global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
 global using System.Text.Json;
 global using System.Text.Json.Nodes;
+global using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 global using Mobile.UI.Interfaces;
 global using Mobile.UI.Configurations;

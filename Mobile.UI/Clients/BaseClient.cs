@@ -13,19 +13,11 @@ public abstract class BaseClient
         }
     }
 
-    protected BaseClient(IHttpsClientHandlerService httpClientService, MobileAppSettings settings)
+    protected BaseClient(HttpClient httpClient, MobileAppSettings settings)
     {
         this.settings = settings;
 
-#if DEBUG    
-        var handler = httpClientService.GetPlatformMessageHandler();
-        if (handler != null)
-            this.httpClient = new HttpClient(handler);
-        else
-            this.httpClient = new HttpClient();
-#else
-            this.httpClient = new HttpClient();
-#endif
+        this.httpClient = BuildHttpClient(httpClient);
     }
 
     /// <summary>
@@ -39,7 +31,7 @@ public abstract class BaseClient
     {
         try
         {
-            var uri = new Uri(Path.Combine(BaseURL, route));
+            var uri = BuildUri(route);
 
             var response = await httpClient.GetAsync(uri);
 
@@ -69,7 +61,7 @@ public abstract class BaseClient
     {
         try
         {
-            var uri = new Uri(Path.Combine(BaseURL, route, $"{routParam}"));
+            var uri = BuildUri(route, $"{routParam}");
 
             var response = await httpClient.GetAsync(uri);
 
@@ -85,6 +77,32 @@ public abstract class BaseClient
         {
             throw new Exception(ex.Message);
         }
+    }
+
+    private HttpClient BuildHttpClient(HttpClient httpClient)
+    {
+#if DEBUG
+        var httpClientService = new HttpsClientHandlerService();
+        var handler = httpClientService.GetPlatformMessageHandler();
+        if (handler != null)
+            httpClient = new HttpClient(handler);
+        else
+            httpClient = new HttpClient();
+#else
+            httpClient = new HttpClient();
+#endif
+
+        return httpClient;
+    }
+
+    private Uri BuildUri(string route)
+    { 
+        return new Uri(Path.Combine(BaseURL, settings.ApiVersion, route));
+    }
+
+    private Uri BuildUri(string route, object routParam)
+    {
+        return new Uri(Path.Combine(BaseURL, settings.ApiVersion, route, $"{routParam}"));
     }
 }
 

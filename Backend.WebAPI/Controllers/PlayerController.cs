@@ -12,7 +12,7 @@
 
         [ApiExplorerSettings(GroupName = ControllerDecoration.PublicAPI)]
         [SwaggerOperation(OperationId = "getAllAsync")]
-        [Route("api/v{version:apiVersion}/players")]
+        [Route("api/v{version:apiVersion}/players/get-all")]
         [ApiVersion(ControllerDecoration.ActiveVersion)]
         [HttpGet]
         [ProducesResponseType((int)HttpResponseType.OK, Type = typeof(List<PlayerModel>))]
@@ -54,7 +54,7 @@
 
         [ApiExplorerSettings(GroupName = ControllerDecoration.PublicAPI)]
         [SwaggerOperation(OperationId = "getByIdAsync")]
-        [Route("api/v{version:apiVersion}/PlayerModel/{id}")]
+        [Route("api/v{version:apiVersion}/players/{id}")]
         [ApiVersion(ControllerDecoration.ActiveVersion)]
         [HttpGet]
         [ProducesResponseType((int)HttpResponseType.OK, Type = typeof(PlayerModel))]
@@ -74,10 +74,10 @@
 
         [ApiExplorerSettings(GroupName = ControllerDecoration.PublicAPI)]
         [SwaggerOperation(OperationId = "deleteAsync")]
-        [Route("api/v{version:apiVersion}/PlayerModel/delete/{id}")]
+        [Route("api/v{version:apiVersion}/players/delete/{id}")]
         [ApiVersion(ControllerDecoration.ActiveVersion)]
         [HttpDelete]
-        [ProducesResponseType((int)HttpResponseType.OK, Type = typeof(bool))]
+        [ProducesResponseType((int)HttpResponseType.OK)]
         [ProducesResponseType((int)HttpResponseType.BadRequest)]
         [Produces("application/json")]
         public async Task Delete([FromRoute][Required] int id)
@@ -95,10 +95,10 @@
 
         [ApiExplorerSettings(GroupName = ControllerDecoration.PublicAPI)]
         [SwaggerOperation(OperationId = "CrateAsync")]
-        [Route("api/v{version:apiVersion}/PlayerModel/create")]
+        [Route("api/v{version:apiVersion}/players/create")]
         [ApiVersion(ControllerDecoration.ActiveVersion)]
         [HttpPost]
-        [ProducesResponseType((int)HttpResponseType.OK, Type = typeof(PlayerModel))]
+        [ProducesResponseType((int)HttpResponseType.OK)]
         [ProducesResponseType((int)HttpResponseType.BadRequest)]
         [Produces("application/json")]
         public async Task CreateAsync([FromBody] [Required] PlayerModel player)
@@ -116,10 +116,10 @@
 
         [ApiExplorerSettings(GroupName = ControllerDecoration.PublicAPI)]
         [SwaggerOperation(OperationId = "updateAsync")]
-        [Route("api/v{version:apiVersion}/PlayerModel/update")]
+        [Route("api/v{version:apiVersion}/players/update")]
         [ApiVersion(ControllerDecoration.ActiveVersion)]
         [HttpPut]
-        [ProducesResponseType((int)HttpResponseType.OK, Type = typeof(PlayerModel))]
+        [ProducesResponseType((int)HttpResponseType.OK)]
         [ProducesResponseType((int)HttpResponseType.BadRequest)]
         [Produces("application/json")]
         public async Task UpdateAsync([FromBody][Required] PlayerModel player)

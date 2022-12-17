@@ -2,12 +2,12 @@
 
 public class PlayerClient : BaseClient, IPlayerClient
 {
-    public PlayerClient(IHttpsClientHandlerService httpClientService, IOptions<MobileAppSettings> settings) : base(httpClientService, settings.Value)
+    public PlayerClient(HttpClient httpClient, MobileAppSettings settings) : base(httpClient, settings)
     {}
 
     public async Task<List<PlayerModel>> GetAllAsync()
     {
-        var path = @"players/getAllAsync";
+        var path = @"players/get-all";
         return await SendGetRequestAsync<List<PlayerModel>>(path);
     } 
 }
