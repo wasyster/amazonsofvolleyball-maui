@@ -6,7 +6,9 @@ public class PlayerModel
 
     public string Name { get; set; }
 
-    public string ImageLink { get; set; }
+    public string LocalImageLink { get; set; }
+
+    public string WebImageLink { get; set; }
 
     public string Club { get; set; }
 
@@ -22,11 +24,16 @@ public class PlayerModel
 
     public PositionModel Position { get; set; }
 
-    public PlayerModel(int id, string name, string imageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position)
+    public PlayerModel()
+    {
+    }
+
+    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position)
     {
         Id = id;
         Name = name;
-        ImageLink = imageLink;
+        LocalImageLink = localImageLink;
+        WebImageLink = webImageLink;
         Club = club;
         Birthday = birthday;
         BirthPlace = birthPlace;
@@ -40,7 +47,8 @@ public class PlayerModel
     {
         Id = player.Id;
         Name = player.Name;
-        ImageLink = player.ImageLink;
+        LocalImageLink = player.LocalImageLink;
+        WebImageLink = player.WebImageLink;
         Club = player.Club;
         Birthday = player.Birthday;
         BirthPlace = player.BirthPlace;
@@ -56,7 +64,8 @@ public class PlayerModel
         {
             Id = Id,
             Name = Name,
-            ImageLink = ImageLink,
+            LocalImageLink = LocalImageLink,
+            WebImageLink = WebImageLink,
             Club = Club,
             Birthday = Birthday,
             BirthPlace = BirthPlace,
@@ -71,7 +80,8 @@ public class PlayerModel
     {
         player.Id = Id;
         player.Name = Name;
-        player.ImageLink = ImageLink;
+        player.LocalImageLink = LocalImageLink;
+        player.WebImageLink = WebImageLink;
         player.Club = Club;
         player.Birthday = Birthday;
         player.BirthPlace = BirthPlace;
@@ -79,9 +89,5 @@ public class PlayerModel
         player.Height = Height;
         player.Description = Description;
         player.Position = Position.ToEntity();
-    }
-
-    public PlayerModel()
-    {
     }
 }

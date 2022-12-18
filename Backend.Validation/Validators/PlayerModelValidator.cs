@@ -26,9 +26,5 @@ public class PlayerModelValidator : AbstractValidator<PlayerModel>
 
         RuleFor(x => x.Position).NotEmpty()
                                 .NotNull();
-
-        RuleFor(x => x.ImageLink).NotEmpty()
-                                 .NotNull()
-                                 .Must(CustomValidators.ValidateUri).WithMessage("Not a valid URL!");
     }
 }

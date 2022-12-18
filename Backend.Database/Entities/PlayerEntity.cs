@@ -14,8 +14,12 @@ public class PlayerEntity
 
     [Required]
     [StringLength(4069)]
-    public string ImageLink { get; set; }
-    
+    public string LocalImageLink { get; set; }
+
+    [Required]
+    [StringLength(4069)]
+    public string WebImageLink { get; set; }
+
     [Required]
     [StringLength(255)]
     public string Club { get; set; }

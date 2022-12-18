@@ -1,4 +1,4 @@
-﻿using Mobile.UI.Interfaces;
+﻿using Microsoft.Maui.Controls;
 
 namespace Mobile.UI
 {
@@ -17,7 +17,7 @@ namespace Mobile.UI
         {
             base.OnAppearing();
 
-            var result = await playerClient.GetAllAsync();
+            collectionView.ItemsSource = await playerClient.GetAllAsync();
         }
     }
 }
