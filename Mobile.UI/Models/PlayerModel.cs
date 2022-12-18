@@ -6,7 +6,9 @@ public class PlayerModel
 
     public string Name { get; set; }
 
-    public string ImageLink { get; set; }
+    public string LocalImageLink { get; set; }
+
+    public string WebImageLink { get; set; }
 
     public string Club { get; set; }
 
@@ -26,11 +28,12 @@ public class PlayerModel
     {
     }
 
-    public PlayerModel(int id, string name, string imageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position)
+    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position)
     {
         Id = id;
         Name = name;
-        ImageLink = imageLink;
+        LocalImageLink = localImageLink;
+        WebImageLink = webImageLink;
         Club = club;
         Birthday = birthday;
         BirthPlace = birthPlace;
