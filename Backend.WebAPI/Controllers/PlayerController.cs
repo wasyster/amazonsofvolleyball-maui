@@ -28,7 +28,6 @@
             {
                 throw new Exception(ex.Message);
             }
-
         }
 
         [ApiExplorerSettings(GroupName = ControllerDecoration.PublicAPI)]

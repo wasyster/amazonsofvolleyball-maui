@@ -13,11 +13,11 @@ namespace Mobile.UI
             this.playerClient = playerClient;
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
 
-            var result = playerClient.GetAllAsync().Result;
+            var result = await playerClient.GetAllAsync();
         }
     }
 }

@@ -93,6 +93,7 @@ public abstract class BaseClient
 
         httpClient.DefaultRequestHeaders.Add("Cache-Control", "no-cache");
         httpClient.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate, br");
+        httpClient.DefaultRequestHeaders.Add("Host", "amazonsofvolleyball");
 
         httpClient.DefaultRequestHeaders.Accept.Clear();
         httpClient.DefaultRequestHeaders.Accept.Add(new("application/json"));
@@ -112,8 +113,15 @@ public abstract class BaseClient
 
     private async Task<T> SerializeResponse<T>(HttpContent content)
     {
-        var stream = await content.ReadAsStreamAsync();
-        return await JsonSerializer.DeserializeAsync<T>(stream);
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        };
+
+        using var stream = await content.ReadAsStreamAsync();
+        var result = await JsonSerializer.DeserializeAsync<T>(stream, options);
+        
+        return result;
     }
 }
 

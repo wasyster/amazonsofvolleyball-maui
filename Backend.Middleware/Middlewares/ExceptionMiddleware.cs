@@ -79,10 +79,7 @@
 
         class ExceptionDescription
         {
-            public ExceptionDescription(Exception ex)
-            {
-                Message = ex.Message;
-            }
+            public ExceptionDescription(Exception ex) => Message = ex.Message;
 
             public string Message { get; set; }
             public Exception Exception { get; set; }
