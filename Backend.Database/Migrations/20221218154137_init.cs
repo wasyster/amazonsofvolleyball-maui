@@ -7,7 +7,7 @@
 namespace Backend.Database.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,7 +32,8 @@ namespace Backend.Database.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    ImageLink = table.Column<string>(type: "nvarchar(max)", maxLength: 4069, nullable: false),
+                    LocalImageLink = table.Column<string>(type: "nvarchar(max)", maxLength: 4069, nullable: false),
+                    WebImageLink = table.Column<string>(type: "nvarchar(max)", maxLength: 4069, nullable: false),
                     Club = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     Birthday = table.Column<string>(type: "nvarchar(32)", maxLength: 32, nullable: false),
                     BirthPlace = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),

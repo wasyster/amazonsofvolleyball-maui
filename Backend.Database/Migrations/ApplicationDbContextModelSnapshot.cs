@@ -16,7 +16,7 @@ namespace Backend.Database.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("ProductVersion", "7.0.1")
                 .HasAnnotation("Proxies:ChangeTracking", false)
                 .HasAnnotation("Proxies:CheckEquality", false)
                 .HasAnnotation("Proxies:LazyLoading", true)
@@ -54,7 +54,7 @@ namespace Backend.Database.Migrations
                     b.Property<double>("Height")
                         .HasColumnType("float");
 
-                    b.Property<string>("ImageLink")
+                    b.Property<string>("LocalImageLink")
                         .IsRequired()
                         .HasMaxLength(4069)
                         .HasColumnType("nvarchar(max)");
@@ -66,6 +66,11 @@ namespace Backend.Database.Migrations
 
                     b.Property<int>("PositionId")
                         .HasColumnType("int");
+
+                    b.Property<string>("WebImageLink")
+                        .IsRequired()
+                        .HasMaxLength(4069)
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Weight")
                         .HasColumnType("int");
