@@ -14,4 +14,12 @@ public partial class PlayerListComponent : ContentView
 	{
 		InitializeComponent();
 	}
+
+    private async void OnTappHandler(object sender, TappedEventArgs args)
+    {
+        await Navigation.PushModalAsync(new PlayerDetailsModal
+        {
+            BindingContext = Player
+        });
+    }
 }

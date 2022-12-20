@@ -58,4 +58,10 @@
 	  <ProjectReference Include="..\Backend.Models\Backend.Models.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="Modals\PlayerDetailsModal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

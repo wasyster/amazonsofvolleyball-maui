@@ -12,7 +12,13 @@
     <Frame BindingContext="{x:Reference this}"
            BackgroundColor="#111100"
            Margin="2"
-           BorderColor="#C49B33">
+           BorderColor="#C49B33"
+           HasShadow="True">
+
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnTappHandler"/>
+        </Frame.GestureRecognizers>
+
         <StackLayout Orientation="Horizontal">
             <Border Stroke="#C49B33"
                     StrokeThickness="2"

@@ -12,3 +12,4 @@ global using Backend.Models;
 global using Backend.Models.Settings;
 global using Backend.Infrastructure.Interfaces.Services;
 global using MauiUI.Clients;
+global using MauiUI.Modals;
