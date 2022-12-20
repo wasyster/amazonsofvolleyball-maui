@@ -1,24 +1,20 @@
-﻿namespace MauiUI
+﻿namespace MauiUI;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    private readonly IPlayerClient playerClient;
+
+    public MainPage(IPlayerClient playerClient)
     {
-        int count = 0;
+        InitializeComponent();
 
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+        this.playerClient = playerClient;
+    }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
+    protected async override void OnAppearing()
+    {
+        base.OnAppearing();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        collectionView.ItemsSource = await playerClient.GetAllAsync();
     }
 }

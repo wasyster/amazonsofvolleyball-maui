@@ -15,8 +15,13 @@ namespace MauiUI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.ConfigureDI();
+            builder.ConfigurationSettings();
+            builder.ConfigureAppSettings();
+
+
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
