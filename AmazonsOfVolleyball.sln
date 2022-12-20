@@ -3,7 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend.WebAPI", "Backend.WebAPI\Backend.WebAPI.csproj", "{1FF1BBEC-F8FD-419A-A841-3BD20A59362C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiUI", "MauiUI\MauiUI.csproj", "{A34E0AA0-53E0-4011-9DA9-039379B3DBE1}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FF1BBEC-F8FD-419A-A841-3BD20A59362C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF1BBEC-F8FD-419A-A841-3BD20A59362C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF1BBEC-F8FD-419A-A841-3BD20A59362C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF1BBEC-F8FD-419A-A841-3BD20A59362C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34E0AA0-53E0-4011-9DA9-039379B3DBE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34E0AA0-53E0-4011-9DA9-039379B3DBE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34E0AA0-53E0-4011-9DA9-039379B3DBE1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A34E0AA0-53E0-4011-9DA9-039379B3DBE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34E0AA0-53E0-4011-9DA9-039379B3DBE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34E0AA0-53E0-4011-9DA9-039379B3DBE1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
