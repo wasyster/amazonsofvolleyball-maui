@@ -7,6 +7,7 @@ global using Microsoft.AspNetCore.Mvc;
 global using System.ComponentModel.DataAnnotations;
 global using Swashbuckle.AspNetCore.Annotations;
 global using System.Text;
+global using Microsoft.EntityFrameworkCore;
 
 global using Backend.Infrastructure.Interfaces.Services;
 global using Backend.Models;
