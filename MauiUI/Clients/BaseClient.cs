@@ -82,6 +82,35 @@ public abstract class BaseClient
         }
     }
 
+    /// <summary>
+    /// Creates a simple delete request
+    /// </summary>
+    /// <param name="route">The route part without the base url</param>
+    /// <param name="routParam">Rout parameter</param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
+    protected async Task<bool> SendDeleteRequestAsync(string route, object routParam)
+    {
+        try
+        {
+            var uri = BuildUri(route, routParam);
+
+            var response = await httpClient.DeleteAsync(uri);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Faild to delete data.");
+            }
+
+            return true;
+
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
     private HttpClient BuildHttpClient(HttpClient httpClient)
     {
 #if DEBUG

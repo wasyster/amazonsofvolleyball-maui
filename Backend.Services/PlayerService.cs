@@ -43,7 +43,7 @@ public class PlayerService : IPlayerService
         
         if(entity is null)
             throw new InvalidOperationException("Not found.");
-        
+
         context.Players.Remove(entity);
         context.SaveChanges();
     }

@@ -7,31 +7,30 @@ public class PlayerClient : BaseClient, IPlayerClient
 
     public async Task<List<PlayerModel>> GetAllAsync()
     {
-        var path = @"players/get-all";
-        return await SendGetRequestAsync<List<PlayerModel>>(path);
+        return await SendGetRequestAsync<List<PlayerModel>>(EndPoint.Player.GetAllAsync);
     }
 
-    Task IPlayerService.CreateAsync(PlayerModel player)
+    public async Task<bool> CreateAsync(PlayerModel player)
     {
         throw new NotImplementedException();
     }
 
-    Task IPlayerService.DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(int id)
+    {
+        return await SendDeleteRequestAsync(EndPoint.Player.DeleteAsync, id);
+    }
+
+    public async Task<PlayerModel> GetByIdAsync(int id)
     {
         throw new NotImplementedException();
     }
 
-    Task<PlayerModel> IPlayerService.GetByIdAsync(int id)
+    public async Task<List<PlayerModel>> PageAsync(int page)
     {
         throw new NotImplementedException();
     }
 
-    Task<List<PlayerModel>> IPlayerService.PageAsync(int page)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task IPlayerService.UpdateAsync(PlayerModel player)
+    public async Task<bool> UpdateAsync(PlayerModel player)
     {
         throw new NotImplementedException();
     }

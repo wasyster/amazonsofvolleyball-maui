@@ -9,7 +9,15 @@
         <local:PlayerModel />
     </ContentView.BindingContext>
 
-    <Frame BindingContext="{x:Reference this}"
+    <SwipeView x:Name="swipe">
+        <SwipeView.RightItems>
+            <SwipeItems>
+                <SwipeItem IconImageSource="delete.png"
+                           BackgroundColor="Red"
+                           Invoked="OnDeleteEventHandler" />
+            </SwipeItems>
+        </SwipeView.RightItems>
+        <Frame BindingContext="{x:Reference this}"
            BackgroundColor="#111100"
            Margin="2"
            BorderColor="#C49B33"
@@ -19,23 +27,24 @@
             <TapGestureRecognizer Tapped="OnTappHandler"/>
         </Frame.GestureRecognizers>
 
-        <StackLayout Orientation="Horizontal">
-            <Border Stroke="#C49B33"
+            <StackLayout Orientation="Horizontal">
+                <Border Stroke="#C49B33"
                     StrokeThickness="2"
                     StrokeShape="RoundRectangle 50"
                     Padding="0"
                     HorizontalOptions="Center">
-                <Image WidthRequest="100" HeightRequest="100">
-                    <Image.Source>
-                        <UriImageSource Uri="{Binding Player.WebImageLink}"/>
-                    </Image.Source>
-                </Image>
-            </Border>
-            <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="Center"
+                    <Image WidthRequest="100" HeightRequest="100">
+                        <Image.Source>
+                            <UriImageSource Uri="{Binding Player.WebImageLink}"/>
+                        </Image.Source>
+                    </Image>
+                </Border>
+                <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand" VerticalOptions="Center"
                          FlowDirection="RightToLeft">
-                <Label Text="{Binding Player.Name}" TextColor="#A49B33" />
-                <Label Text="{Binding Player.Club}" TextColor="#C49B33" />
+                    <Label Text="{Binding Player.Name}" TextColor="#A49B33" />
+                    <Label Text="{Binding Player.Club}" TextColor="#C49B33" />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-    </Frame>
+        </Frame>
+    </SwipeView>
 </ContentView>

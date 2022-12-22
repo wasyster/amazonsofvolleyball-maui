@@ -1,3 +1,5 @@
+using Backend.Models.Common;
+
 namespace MauiUI.Components;
 
 public partial class PlayerListComponent : ContentView
@@ -13,7 +15,7 @@ public partial class PlayerListComponent : ContentView
     public PlayerListComponent()
 	{
 		InitializeComponent();
-	}
+    }
 
     private async void OnTappHandler(object sender, TappedEventArgs args)
     {
@@ -21,5 +23,10 @@ public partial class PlayerListComponent : ContentView
         {
             BindingContext = Player
         });
+    }
+
+    private void OnDeleteEventHandler(object sender, EventArgs e)
+    {
+        MessagingCenter.Send<PlayerListComponent, PlayerModel>(this, MessagePiplineMessageKey.DeletePlayerAsync, Player);
     }
 }

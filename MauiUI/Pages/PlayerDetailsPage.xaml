@@ -23,11 +23,7 @@
                     </Image.Source>
                 </Image>
             </Border>
-            <Label Text="{Binding Name}"
-                   TextColor="#A49B33" 
-                   FontSize="25" FontAttributes="Bold"
-                   Padding="0,0,5,5"
-                   HorizontalOptions="End"/>
+            <Label Text="{Binding Name}" Style="{StaticResource title}"/>
             <Label Padding="5,0,5,10">
                 <Label.FormattedText>
                     <FormattedString>

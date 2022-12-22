@@ -21,7 +21,7 @@
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="local:PlayerModel">
-                <controls:PlayerListComponent Player="{Binding}" />
+                <controls:PlayerListComponent Player="{Binding}"/> 
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

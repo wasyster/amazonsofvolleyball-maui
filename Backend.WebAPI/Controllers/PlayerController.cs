@@ -79,7 +79,7 @@
         [ProducesResponseType((int)HttpResponseType.OK)]
         [ProducesResponseType((int)HttpResponseType.BadRequest)]
         [Produces("application/json")]
-        public async Task Delete([FromRoute][Required] int id)
+        public async Task Delete([Required] [FromRoute] int id)
         {
             try
             {
