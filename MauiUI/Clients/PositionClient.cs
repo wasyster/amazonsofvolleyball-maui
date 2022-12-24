@@ -8,6 +8,6 @@ public class PositionClient : BaseClient, IPositionClient
 
 	public async Task<List<PositionModel>> GetAllAsync()
 	{
-		return await SendGetRequestAsync<List<PositionModel>>(EndPoint.Position.GetAllAsync);
+		return await SendGetRequestAsync<List<PositionModel>>(EndPoints.Position.GetAllAsync);
 	}
 }

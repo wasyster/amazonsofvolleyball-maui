@@ -29,7 +29,7 @@ public partial class MainPage : ContentPage
 
     private async void OnAddNew(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new AddOrUpdatePlayer());
+        await Shell.Current.GoToAsync(PageRoutes.AddOrUpdatePage);
     }
 
     private async Task OnDelete(PlayerModel player)

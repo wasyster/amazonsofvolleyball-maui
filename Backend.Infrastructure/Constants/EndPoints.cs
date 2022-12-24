@@ -1,6 +1,6 @@
 ﻿namespace Backend.Infrastructure.Constants;
 
-public static class EndPoint
+public static class EndPoints
 {
     public static class Player
     {

@@ -39,11 +39,30 @@ public class PlayerModel : BaseModel
     [Required]
     public string Description { get; set; }
 
+    public string PositionName { get; set; }
+
     [Required]
-    public PositionModel Position { get; set; } = new PositionModel();
+    [Range(1, 7)]
+    public int PositionId { get; set; }
 
     public PlayerModel()
     {
+    }
+
+    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, string positionName, int positionId)
+    {
+        Id = id;
+        Name = name;
+        LocalImageLink = localImageLink;
+        WebImageLink = webImageLink;
+        Club = club;
+        Birthday = birthday;
+        BirthPlace = birthPlace;
+        Weight = weight;
+        Height = height;
+        Description = description;
+        PositionName = positionName;
+        PositionId = positionId;
     }
 
     public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position)
@@ -58,7 +77,8 @@ public class PlayerModel : BaseModel
         Weight = weight;
         Height = height;
         Description = description;
-        Position = position;
+        PositionName = position.Name;
+        PositionId = position.Id;
     }
 
     public PlayerModel(PlayerEntity player)
@@ -73,7 +93,8 @@ public class PlayerModel : BaseModel
         Weight = player.Weight;
         Height = player.Height;
         Description = player.Description;
-        Position = new PositionModel(player.Position);
+        PositionName = player.Position.Name;
+        PositionId = player.Position.Id;
     }
 
     public PlayerEntity ToEntity()
@@ -90,7 +111,11 @@ public class PlayerModel : BaseModel
             Weight = Weight,
             Height = Height,
             Description = Description,
-            Position = Position.ToEntity(),
+            Position = new PositionEntity
+            { 
+                Id = PositionId,
+                Name = PositionName
+            }
         };
     }
 
@@ -106,6 +131,8 @@ public class PlayerModel : BaseModel
         player.Weight = Weight;
         player.Height = Height;
         player.Description = Description;
-        player.Position = Position.ToEntity();
+
+        player.Position.Id = PositionId;
+        player.Position.Name = PositionName;
     }
 }

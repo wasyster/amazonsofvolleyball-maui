@@ -7,7 +7,7 @@ public class PlayerClient : BaseClient, IPlayerClient
 
     public async Task<List<PlayerModel>> GetAllAsync()
     {
-        return await SendGetRequestAsync<List<PlayerModel>>(EndPoint.Player.GetAllAsync);
+        return await SendGetRequestAsync<List<PlayerModel>>(EndPoints.Player.GetAllAsync);
     }
 
     public async Task<bool> CreateAsync(PlayerModel player)
@@ -17,7 +17,7 @@ public class PlayerClient : BaseClient, IPlayerClient
 
     public async Task<bool> DeleteAsync(int id)
     {
-        return await SendDeleteRequestAsync(EndPoint.Player.DeleteAsync, id);
+        return await SendDeleteRequestAsync(EndPoints.Player.DeleteAsync, id);
     }
 
     public async Task<PlayerModel> GetByIdAsync(int id)

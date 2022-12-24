@@ -19,10 +19,12 @@ public partial class PlayerListComponent : ContentView
 
     private async void OnTappHandler(object sender, TappedEventArgs args)
     {
-        await Navigation.PushAsync(new PlayerDetailsPage
+        var navigationParameter = new Dictionary<string, object>
         {
-            BindingContext = Player
-        });
+            { "player", Player }
+        };
+
+        await Shell.Current.GoToAsync(PageRoutes.DetailsPage, true, navigationParameter);
     }
 
     private void OnDeleteEventHandler(object sender, EventArgs e)

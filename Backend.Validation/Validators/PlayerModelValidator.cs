@@ -24,7 +24,7 @@ public class PlayerModelValidator : AbstractValidator<PlayerModel>
                               .NotNull()
                               .GreaterThan(0);
 
-        RuleFor(x => x.Position).NotEmpty()
+        RuleFor(x => x.PositionName).NotEmpty()
                                 .NotNull();
     }
 }

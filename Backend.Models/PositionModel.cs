@@ -3,6 +3,8 @@
 [PropertyChanged.AddINotifyPropertyChangedInterface]
 public class PositionModel : BaseModel
 {
+    [Required]
+    [Range(1, 7)]
     public int Id { get; set; }
 
     [Required]

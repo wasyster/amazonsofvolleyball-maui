@@ -1,4 +1,6 @@
-﻿namespace MauiUI.Configurations;
+﻿using Microsoft.Maui.Hosting;
+
+namespace MauiUI.Configurations;
 
 public static class ConfigorationOfDI
 {
@@ -12,5 +14,6 @@ public static class ConfigorationOfDI
 
         //pages
         builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<AddOrUpdatePlayer>();
     }
 }
