@@ -16,17 +16,19 @@
                 Margin="10">
         <VerticalStackLayout >
             <Label Text="Name" />
-            <Entry x:Name="name" Text="{Binding Name}" />
+            <Entry x:Name="name" Text="{Binding Name}"
+                   ClearButtonVisibility="WhileEditing"/>
         </VerticalStackLayout>
         <VerticalStackLayout >
             <Label Text="Position" />
-            <Picker x:Name="position" Title="Position" 
+            <Picker x:Name="position" Title="Select..." 
                     ItemDisplayBinding="{Binding Name}"
                     SelectedItem="{Binding PositionId}"/>
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Text="Club" />
-            <Entry x:Name="club" Text="{Binding Club}" />
+            <Entry x:Name="club" Text="{Binding Club}"
+                   ClearButtonVisibility="WhileEditing"/>
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Text="Birthday" />
@@ -34,19 +36,23 @@
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Text="Birth place" />
-            <Entry x:Name="birthplace" Text="{Binding BirthPlace}" />
+            <Entry x:Name="birthplace" Text="{Binding BirthPlace}"
+                   ClearButtonVisibility="WhileEditing" />
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Text="Weight"/>
-            <Entry x:Name="weight" Text="{Binding Weight}" Keyboard="Numeric" />
+            <Entry x:Name="weight" Text="{Binding Weight}" Keyboard="Numeric"
+                   ClearButtonVisibility="WhileEditing" />
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Text="Height" />
-            <Entry x:Name="height" Text="{Binding Height}" Keyboard="Numeric" />
+            <Entry x:Name="height" Text="{Binding Height}" Keyboard="Numeric"
+                   ClearButtonVisibility="WhileEditing" />
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Text="Image link" />
-            <Entry x:Name="webImageLink" Text="{Binding WebImageLink}" />
+            <Entry x:Name="webImageLink" Text="{Binding WebImageLink}"
+                   ClearButtonVisibility="WhileEditing" />
         </VerticalStackLayout>
         <VerticalStackLayout>
             <Label Text="Description" />

@@ -46,15 +46,7 @@ public partial class AddOrUpdatePlayer : ContentPage
 
     private async Task SetUpPositionPicker()
     {
-        var positions = await this.positionClient.GetAllAsync();
-
-        positions.Add(new PositionModel
-        {
-            Id = 0,
-            Name = "Select ..."
-        });
-
-        position.ItemsSource = positions;
+        position.ItemsSource = await this.positionClient.GetAllAsync();
     }
 
 	private void SetTitle()
