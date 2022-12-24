@@ -1,4 +1,4 @@
-﻿namespace Backend.Infrastructure.Constans;
+﻿namespace Backend.Infrastructure.Constants;
 
 public static class ControllerDecoration
 {

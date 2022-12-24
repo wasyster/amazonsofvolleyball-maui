@@ -13,7 +13,7 @@ public partial class MainPage : ContentPage
 
         this.playerClient = playerClient;
 
-        MessagingCenter.Subscribe<PlayerListComponent, PlayerModel>(this, MessagePiplineMessageKey.DeletePlayerAsync, async (sender, arg) =>
+        MessagingCenter.Subscribe<PlayerListComponent, PlayerModel>(this, MobileEventBusKey.DeletePlayerAsync, async (sender, arg) =>
         {
             await OnDelete(arg);
         });
@@ -27,6 +27,11 @@ public partial class MainPage : ContentPage
         collectionView.ItemsSource = players;
     }
 
+    private async void OnAddNew(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AddOrUpdatePlayer());
+    }
+
     private async Task OnDelete(PlayerModel player)
     {
         if (player is null)
@@ -37,4 +42,5 @@ public partial class MainPage : ContentPage
         var index = players.IndexOf(player);
         players.RemoveAt(index);
     }
+
 }

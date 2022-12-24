@@ -5,6 +5,10 @@
              xmlns:local="clr-namespace:Backend.Models;assembly=Backend.Models"
              x:Class="MauiUI.MainPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="add.png" Clicked="OnAddNew" />
+    </ContentPage.ToolbarItems>
+
     <CollectionView x:Name="collectionView"
                     BackgroundColor="Black">
         <CollectionView.Header>

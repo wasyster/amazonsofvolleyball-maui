@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>MauiUI</ApplicationTitle>
+		<ApplicationTitle>Amazons of Volleyball</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.mauiui</ApplicationId>
@@ -50,10 +50,12 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Styles\AppStyles.xml" />
+	  <None Remove="Resources\Styles\Validation.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Include="Resources\Styles\AppStyles.xml" />
+	  <MauiXaml Include="Resources\Styles\Validation.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -67,6 +69,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\AddOrUpdatePlayer.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\PlayerDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

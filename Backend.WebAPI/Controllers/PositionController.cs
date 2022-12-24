@@ -13,7 +13,7 @@
 
         [ApiExplorerSettings(GroupName = ControllerDecoration.PublicAPI)]
         [SwaggerOperation(OperationId = "getAllAsync")]
-        [Route("api/v{version:apiVersion}/positions/all")]
+        [Route("api/v{version:apiVersion}/positions/get-all")]
         [ApiVersion(ControllerDecoration.ActiveVersion)]
         [HttpGet]
         [ProducesResponseType((int)HttpResponseType.OK, Type = typeof(List<PositionModel>))]

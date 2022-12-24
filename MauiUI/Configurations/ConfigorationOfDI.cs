@@ -8,6 +8,7 @@ public static class ConfigorationOfDI
         builder.Services.AddSingleton<HttpClient>();
 
         builder.Services.AddTransient<IPlayerClient, PlayerClient>();
+        builder.Services.AddTransient<IPositionClient, PositionClient>();
 
         //pages
         builder.Services.AddSingleton<MainPage>();

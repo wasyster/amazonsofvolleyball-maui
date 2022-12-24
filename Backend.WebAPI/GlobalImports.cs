@@ -11,7 +11,7 @@ global using Microsoft.EntityFrameworkCore;
 
 global using Backend.Infrastructure.Interfaces.Services;
 global using Backend.Models;
-global using Backend.Infrastructure.Constans;
+global using Backend.Infrastructure.Constants;
 global using Backend.Core.Enums;
 global using Backend.Models.Options;
 global using Backend.Middleware.Middlewares;

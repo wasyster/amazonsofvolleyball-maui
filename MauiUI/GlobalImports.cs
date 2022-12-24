@@ -15,5 +15,5 @@ global using Backend.Infrastructure.Interfaces.Services;
 global using MauiUI.Clients;
 global using MauiUI.Pages;
 global using MauiUI.Components;
-global using Backend.Infrastructure.Constans;
+global using Backend.Infrastructure.Constants;
 global using Backend.Models.Common;

@@ -1,28 +1,46 @@
 ﻿namespace Backend.Models;
 
-public class PlayerModel
+[PropertyChanged.AddINotifyPropertyChangedInterface]
+public class PlayerModel : BaseModel
 {
     public int Id { get; set; }
 
+    [Required]
+    [StringLength(255)]
     public string Name { get; set; }
 
+    [StringLength(4096)]
     public string LocalImageLink { get; set; }
 
+    [Required]
+    [StringLength(4096)]
     public string WebImageLink { get; set; }
 
+    [Required]
+    [StringLength(255)]
     public string Club { get; set; }
 
+    [Required]
+    [StringLength(32)]
     public string Birthday { get; set; }
 
+    [Required]
+    [StringLength(255)]
     public string BirthPlace { get; set; }
 
+    [Required]
+    [Range(0, 100)]
     public int Weight { get; set; }
 
+    [Required]
+    [Range(0, 2.5)]
     public double Height { get; set; }
 
+    [Required]
     public string Description { get; set; }
 
-    public PositionModel Position { get; set; }
+    [Required]
+    public PositionModel Position { get; set; } = new PositionModel();
 
     public PlayerModel()
     {

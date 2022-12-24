@@ -1,8 +1,12 @@
 ﻿namespace Backend.Models;
 
-public class PositionModel
+[PropertyChanged.AddINotifyPropertyChangedInterface]
+public class PositionModel : BaseModel
 {
     public int Id { get; set; }
+
+    [Required]
+    [StringLength(255)]
     public string Name { get; set; }
 
     public PositionModel()

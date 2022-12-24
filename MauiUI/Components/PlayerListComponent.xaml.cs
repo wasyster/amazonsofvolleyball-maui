@@ -27,6 +27,6 @@ public partial class PlayerListComponent : ContentView
 
     private void OnDeleteEventHandler(object sender, EventArgs e)
     {
-        MessagingCenter.Send<PlayerListComponent, PlayerModel>(this, MessagePiplineMessageKey.DeletePlayerAsync, Player);
+        MessagingCenter.Send<PlayerListComponent, PlayerModel>(this, MobileEventBusKey.DeletePlayerAsync, Player);
     }
 }

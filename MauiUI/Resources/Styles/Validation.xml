@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+	<!--<Entry Text="{Binding UserName.Value, Mode=TwoWay}">
+		<Entry.Style>
+			<OnPlatform x:TypeArguments="Style">
+				<On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+				<On Platform="WinUI" Value="{StaticResource WinUIEntryStyle}" />
+			</OnPlatform>
+		</Entry.Style>
+		<Entry.Behaviors>
+			<mct:EventToCommandBehavior
+			EventName="TextChanged"
+			Command="{Binding ValidateCommand}" />
+		</Entry.Behaviors>
+		<Entry.Triggers>
+			<DataTrigger
+			TargetType="Entry"
+			Binding="{Binding UserName.IsValid}"
+			Value="False">
+				<Setter Property="BackgroundColor" Value="{StaticResource ErrorColor}" />
+			</DataTrigger>
+		</Entry.Triggers>
+	</Entry>-->
+
+</ResourceDictionary>

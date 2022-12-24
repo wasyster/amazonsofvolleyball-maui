@@ -24,6 +24,9 @@
                 </Image>
             </Border>
             <Label Text="{Binding Name}" Style="{StaticResource title}"/>
+            <Label Text="{Binding Position.Name}"
+                   TextColor="#C49B33" FontSize="15"
+                   HorizontalOptions="End" Padding="0,0,0,15" TextTransform="Uppercase"/>
             <Label Padding="5,0,5,10">
                 <Label.FormattedText>
                     <FormattedString>
