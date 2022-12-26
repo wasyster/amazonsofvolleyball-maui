@@ -12,52 +12,53 @@
         <ToolbarItem IconImageSource="save.svg" Clicked="OnSaveClick"/>
     </ContentPage.ToolbarItems>
 
-    <FlexLayout Direction="Column" AlignItems="Start" AlignContent="Stretch"
-                Margin="10">
-        <VerticalStackLayout >
-            <Label Text="Name" />
-            <Entry x:Name="name" Text="{Binding Name}"
-                   ClearButtonVisibility="WhileEditing"/>
-        </VerticalStackLayout>
-        <VerticalStackLayout >
-            <Label Text="Position" />
-            <Picker x:Name="position" Title="Select..." 
-                    ItemDisplayBinding="{Binding Name}"
-                    SelectedItem="{Binding PositionId}"/>
-        </VerticalStackLayout>
+    <ScrollView Margin="10">
         <VerticalStackLayout>
-            <Label Text="Club" />
-            <Entry x:Name="club" Text="{Binding Club}"
-                   ClearButtonVisibility="WhileEditing"/>
+            <VerticalStackLayout>
+                <Label Text="Name" />
+                <Entry x:Name="name" Text="{Binding Name}"
+                       ClearButtonVisibility="WhileEditing" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,10">
+                <Label Text="Position" />
+                <Picker x:Name="position" Title="Select..."
+                        ItemDisplayBinding="{Binding Name}"
+                        SelectedItem="{Binding PositionId}" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,10">
+                <Label Text="Club" />
+                <Entry x:Name="club" Text="{Binding Club}" 
+                       ClearButtonVisibility="WhileEditing" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,10">
+                <Label Text="Birthday" />
+                <DatePicker  x:Name="birthday" Date="{Binding Birthday}" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,10">
+                <Label Text="Birth place" />
+                <Entry x:Name="birthplace" Text="{Binding BirthPlace}" 
+                       ClearButtonVisibility="WhileEditing" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,10">
+                <Label Text="Weight" />
+                <Entry x:Name="weight" Text="{Binding Weight}"
+                       ClearButtonVisibility="WhileEditing" Keyboard="Numeric"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,10">
+                <Label Text="Height" />
+                <Entry x:Name="height" Text="{Binding Height}" 
+                       ClearButtonVisibility="WhileEditing" Keyboard="Numeric"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,10">
+                <Label Text="Image link" />
+                <Entry x:Name="webImageLink" Text="{Binding WebImageLink}"
+                       ClearButtonVisibility="WhileEditing"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Margin="0,10">
+                <Label Text="Description" />
+                <Editor x:Name="description" Text="{Binding Description}"
+                        AutoSize="TextChanges"/>
+            </VerticalStackLayout>
         </VerticalStackLayout>
-        <VerticalStackLayout>
-            <Label Text="Birthday" />
-            <DatePicker x:Name="birthday" Date="{Binding Birthday}" />
-        </VerticalStackLayout>
-        <VerticalStackLayout>
-            <Label Text="Birth place" />
-            <Entry x:Name="birthplace" Text="{Binding BirthPlace}"
-                   ClearButtonVisibility="WhileEditing" />
-        </VerticalStackLayout>
-        <VerticalStackLayout>
-            <Label Text="Weight"/>
-            <Entry x:Name="weight" Text="{Binding Weight}" Keyboard="Numeric"
-                   ClearButtonVisibility="WhileEditing" />
-        </VerticalStackLayout>
-        <VerticalStackLayout>
-            <Label Text="Height" />
-            <Entry x:Name="height" Text="{Binding Height}" Keyboard="Numeric"
-                   ClearButtonVisibility="WhileEditing" />
-        </VerticalStackLayout>
-        <VerticalStackLayout>
-            <Label Text="Image link" />
-            <Entry x:Name="webImageLink" Text="{Binding WebImageLink}"
-                   ClearButtonVisibility="WhileEditing" />
-        </VerticalStackLayout>
-        <VerticalStackLayout>
-            <Label Text="Description" />
-            <Editor x:Name="description" Text="{Binding Description}" />
-        </VerticalStackLayout>
-    </FlexLayout>
-
+    </ScrollView>
 </ContentPage>
