@@ -1,48 +1,114 @@
 ﻿namespace Backend.Models;
 
-public class PlayerModel
+public partial class PlayerModel : ObservableValidator
 {
-    public int Id { get; set; }
+    private int id;
+    private string name;
+    private string localImageLink;
+    private string webImageLink;
+    private string club;
+    private string birthday;
+    private string birthPlace;
+    private int weight;
+    private double height;
+    private string positionName;
+    private int positionId;
+    private string description;
+
+    public ICommand ValidateCommand => new RelayCommand(() => ValidateAllProperties());
+
+    public int Id
+    {
+        get => this.id;
+        set => SetProperty(ref this.id, value, true);
+    }
 
     [Required]
     [StringLength(255)]
-    public string Name { get; set; }
+    public string Name
+    {
+        get => this.name;
+        set => SetProperty(ref this.name, value, true);
+    }
 
     [StringLength(4096)]
-    public string LocalImageLink { get; set; }
+    public string LocalImageLink
+    {
+        get => this.localImageLink;
+        set => SetProperty(ref this.localImageLink, value, true);
+    }
 
     [Required]
     [StringLength(4096)]
-    public string WebImageLink { get; set; }
+    public string WebImageLink
+    {
+        get => this.webImageLink;
+        set => SetProperty(ref this.webImageLink, value, true);
+    }
 
     [Required]
     [StringLength(255)]
-    public string Club { get; set; }
+    public string Club
+    {
+        get => this.club;
+        set => SetProperty(ref this.club, value, true);
+    }
 
     [Required]
     [StringLength(32)]
-    public string Birthday { get; set; }
+    public string Birthday
+    {
+        get => this.birthday;
+        set => SetProperty(ref this.birthday, value, true);
+    }
 
     [Required]
     [StringLength(255)]
-    public string BirthPlace { get; set; }
+    public string BirthPlace
+    {
+        get => this.birthPlace;
+        set => SetProperty(ref this.birthPlace, value, true);
+    }
 
     [Required]
     [Range(0, 100)]
-    public int Weight { get; set; }
+    public int Weight
+    {
+        get => this.weight;
+        set => SetProperty(ref this.weight, value, true);
+    }
 
     [Required]
     [Range(0, 2.5)]
-    public double Height { get; set; }
+    public double Height
+    {
+        get => this.height;
+        set => SetProperty(ref this.height, value, true);
+    }
 
     [Required]
-    public string Description { get; set; }
+    public string Description
+    {
+        get => this.description;
+        set => SetProperty(ref this.description, value, true);
+    }
 
-    public string PositionName { get; set; }
+    public string PositionName
+    {
+        get => this.positionName;
+        set => SetProperty(ref this.positionName, value, true);
+    }
 
     [Required]
     [Range(1, 7)]
-    public int PositionId { get; set; }
+    public int PositionId
+    {
+        get => this.positionId;
+        set => SetProperty(ref this.positionId, value, true);
+    }
+
+    public Dictionary<string, string?> Errors => this.GetErrors().ToDictionary(k => k.MemberNames.First(), v => v.ErrorMessage);
+
 
     public PlayerModel()
     {
@@ -111,7 +177,7 @@ public class PlayerModel
             Height = Height,
             Description = Description,
             Position = new PositionEntity
-            { 
+            {
                 Id = PositionId,
                 Name = PositionName
             }

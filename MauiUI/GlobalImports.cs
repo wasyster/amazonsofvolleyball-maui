@@ -6,6 +6,7 @@ global using System.Text.Json;
 global using System.Text.Json.Nodes;
 global using Microsoft.Extensions.DependencyInjection;
 global using System.Collections.ObjectModel;
+global using CommunityToolkit.Maui;
 
 global using Backend.Infrastructure.Clients.Services;
 global using MauiUI.Configurations;
