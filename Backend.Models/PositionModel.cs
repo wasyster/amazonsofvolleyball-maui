@@ -1,7 +1,6 @@
 ﻿namespace Backend.Models;
 
-[PropertyChanged.AddINotifyPropertyChangedInterface]
-public class PositionModel : BaseModel
+public class PositionModel
 {
     [Required]
     [Range(1, 7)]

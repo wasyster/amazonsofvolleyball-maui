@@ -1,7 +1,6 @@
 ﻿namespace Backend.Models;
 
-[PropertyChanged.AddINotifyPropertyChangedInterface]
-public class PlayerModel : BaseModel
+public class PlayerModel
 {
     public int Id { get; set; }
 
