@@ -6,7 +6,7 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <ContentPage.BindingContext>
-        <local:PlayerModel />
+        <local:PlayerModel x:Name="ViewModel"/>
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
@@ -20,10 +20,12 @@
                 <Entry x:Name="name" Text="{Binding Name}"
                        ClearButtonVisibility="WhileEditing">
                     <Entry.Behaviors>
-                        <toolkit:EventToCommandBehavior EventName="TextChanged"
-                                                        Command="{Binding ValidateCommand}" />
+                        <toolkit:EventToCommandBehavior
+                            EventName="TextChanged"
+                            Command="{Binding ValidateCommand}" />
                     </Entry.Behaviors>
                 </Entry>
+                <Label x:Name="lblValidationErrorName" TextColor="red" />
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Position" />
@@ -34,7 +36,14 @@
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Club" />
                 <Entry x:Name="club" Text="{Binding Club}" 
-                       ClearButtonVisibility="WhileEditing" />
+                       ClearButtonVisibility="WhileEditing">
+                    <Entry.Behaviors>
+                        <toolkit:EventToCommandBehavior
+                            EventName="TextChanged"
+                            Command="{Binding ValidateCommand}" />
+                    </Entry.Behaviors>
+                </Entry>
+                <Label x:Name="lblValidationErrorClub" TextColor="red" />
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Birthday" />

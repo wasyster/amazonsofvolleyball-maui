@@ -1,6 +1,6 @@
 ﻿namespace Backend.Models;
 
-public partial class PlayerModel : ObservableValidator
+public partial class PlayerModel : BaseViewModel
 {
     private int id;
     private string name;
@@ -15,8 +15,6 @@ public partial class PlayerModel : ObservableValidator
     private int positionId;
     private string description;
 
-    public ICommand ValidateCommand => new RelayCommand(() => ValidateAllProperties());
-
     public int Id
     {
         get => this.id;
@@ -25,6 +23,7 @@ public partial class PlayerModel : ObservableValidator
 
     [Required]
     [StringLength(255)]
+    [MinLength(2)]
     public string Name
     {
         get => this.name;
@@ -48,6 +47,7 @@ public partial class PlayerModel : ObservableValidator
 
     [Required]
     [StringLength(255)]
+    [MinLength(2)]
     public string Club
     {
         get => this.club;
@@ -107,14 +107,11 @@ public partial class PlayerModel : ObservableValidator
         set => SetProperty(ref this.positionId, value, true);
     }
 
-    public Dictionary<string, string?> Errors => this.GetErrors().ToDictionary(k => k.MemberNames.First(), v => v.ErrorMessage);
 
+    public PlayerModel() : base()
+    {}
 
-    public PlayerModel()
-    {
-    }
-
-    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, string positionName, int positionId)
+    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, string positionName, int positionId) : base()
     {
         Id = id;
         Name = name;
@@ -130,7 +127,7 @@ public partial class PlayerModel : ObservableValidator
         PositionId = positionId;
     }
 
-    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position)
+    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position) : base()
     {
         Id = id;
         Name = name;

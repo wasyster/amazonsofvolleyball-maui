@@ -50,12 +50,10 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Styles\AppStyles.xml" />
-	  <None Remove="Resources\Styles\Validation.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiXaml Include="Resources\Styles\AppStyles.xml" />
-	  <MauiXaml Include="Resources\Styles\Validation.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
