@@ -9,12 +9,11 @@ public partial class PlayerModel : BaseViewModel
     private string club;
     private string birthday;
     private string birthPlace;
-    private int weight;
-    private double height;
-    private string positionName;
-    private int positionId;
+    private int? weight;
+    private double? height;
     private string description;
-
+    private PositionModel position;
+    
     public int Id
     {
         get => this.id;
@@ -72,7 +71,7 @@ public partial class PlayerModel : BaseViewModel
 
     [Required]
     [Range(0, 100)]
-    public int Weight
+    public int? Weight
     {
         get => this.weight;
         set => SetProperty(ref this.weight, value, true);
@@ -80,7 +79,7 @@ public partial class PlayerModel : BaseViewModel
 
     [Required]
     [Range(0, 2.5)]
-    public double Height
+    public double? Height
     {
         get => this.height;
         set => SetProperty(ref this.height, value, true);
@@ -93,20 +92,12 @@ public partial class PlayerModel : BaseViewModel
         set => SetProperty(ref this.description, value, true);
     }
 
-    public string PositionName
-    {
-        get => this.positionName;
-        set => SetProperty(ref this.positionName, value, true);
-    }
-
     [Required]
-    [Range(1, 7)]
-    public int PositionId
+    public PositionModel Position
     {
-        get => this.positionId;
-        set => SetProperty(ref this.positionId, value, true);
+        get => this.position;
+        set => SetProperty(ref this.position, value, true);
     }
-
 
     public PlayerModel() : base()
     {}
@@ -123,8 +114,7 @@ public partial class PlayerModel : BaseViewModel
         Weight = weight;
         Height = height;
         Description = description;
-        PositionName = positionName;
-        PositionId = positionId;
+        Position = new PositionModel(positionId, positionName);
     }
 
     public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position) : base()
@@ -139,8 +129,7 @@ public partial class PlayerModel : BaseViewModel
         Weight = weight;
         Height = height;
         Description = description;
-        PositionName = position.Name;
-        PositionId = position.Id;
+        Position = position;
     }
 
     public PlayerModel(PlayerEntity player)
@@ -155,8 +144,7 @@ public partial class PlayerModel : BaseViewModel
         Weight = player.Weight;
         Height = player.Height;
         Description = player.Description;
-        PositionName = player.Position.Name;
-        PositionId = player.Position.Id;
+        Position = new PositionModel(player.Position);
     }
 
     public PlayerEntity ToEntity()
@@ -170,14 +158,10 @@ public partial class PlayerModel : BaseViewModel
             Club = Club,
             Birthday = Birthday,
             BirthPlace = BirthPlace,
-            Weight = Weight,
-            Height = Height,
+            Weight = Weight.Value,
+            Height = Height.Value,
             Description = Description,
-            Position = new PositionEntity
-            {
-                Id = PositionId,
-                Name = PositionName
-            }
+            Position = Position.ToEntity()
         };
     }
 
@@ -190,11 +174,10 @@ public partial class PlayerModel : BaseViewModel
         player.Club = Club;
         player.Birthday = Birthday;
         player.BirthPlace = BirthPlace;
-        player.Weight = Weight;
-        player.Height = Height;
+        player.Weight = Weight.Value;
+        player.Height = Height.Value;
         player.Description = Description;
 
-        player.Position.Id = PositionId;
-        player.Position.Name = PositionName;
+        player.Position = Position.ToEntity();
     }
 }

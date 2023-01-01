@@ -10,10 +10,19 @@ public class BaseViewModel : ObservableValidator
 {
     public event NotifyWithValidationMessages? ValidationCompleted;
 
-    public virtual ICommand ValidateCommand => new RelayCommand(() =>
+    public virtual IRelayCommand<object> ValidateCommand => new RelayCommand<object>((commandParameter) =>
     {
         ClearErrors();
-        ValidateAllProperties();
+
+        var propertyName = commandParameter?.ToString();
+
+        if (!string.IsNullOrWhiteSpace(propertyName))
+        {
+            ValidateProperty(propertyName);
+        }
+        else
+            ValidateAllProperties();
+        
         var validationMessages = this.GetErrors()
                                      .ToDictionary(k => k.MemberNames.First().ToLower(), v => v.ErrorMessage);
     

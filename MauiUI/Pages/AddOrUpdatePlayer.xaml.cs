@@ -34,7 +34,7 @@ public partial class AddOrUpdatePlayer : ContentPage
 		SetTitle();
 		SetActionPointer();
 
-        player = player ?? new PlayerModel();
+        player ??= new PlayerModel();
     }
 
 	protected async override void OnAppearing()
@@ -71,13 +71,21 @@ public partial class AddOrUpdatePlayer : ContentPage
     }
 
 	private async Task AddNewPlayer()
-	{ }
+	{
+        //var result = await playerClient.CreateAsync(player);
+
+        //if (!result)
+        //    return;
+    }
 
     private async Task UpdatePlayer()
     { }
 
     private async void OnSaveClick(object sender, EventArgs e)
     {
+        //if (player?.HasErrors ?? true)
+        //    return;
+
 		await asyncAction();
     }
 
@@ -87,6 +95,12 @@ public partial class AddOrUpdatePlayer : ContentPage
             return;
 
         lblValidationErrorName.Text = validationMessages.GetValueOrDefault("name");
+        lblValidationErrorPosition.Text = validationMessages.GetValueOrDefault("positionid");
         lblValidationErrorClub.Text = validationMessages.GetValueOrDefault("club");
+        lblValidationErrorWebImageLink.Text = validationMessages.GetValueOrDefault("webimagelink");
+        lblValidationErrorBirthPlace.Text = validationMessages.GetValueOrDefault("birthplace");
+        lblValidationErrorWeight.Text = validationMessages.GetValueOrDefault("weight");
+        lblValidationErrorHeight.Text = validationMessages.GetValueOrDefault("height");
+        lblValidationErrorDescription.Text = validationMessages.GetValueOrDefault("description");
     }
 }
