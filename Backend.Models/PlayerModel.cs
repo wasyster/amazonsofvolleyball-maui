@@ -26,14 +26,30 @@ public partial class PlayerModel : BaseViewModel
     public string Name
     {
         get => this.name;
-        set => SetProperty(ref this.name, value, true);
+        set
+        {
+            SetProperty(ref this.name, value, true);
+
+            ClearErrors();
+            SetProperty(ref this.name, value);
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[Name]");
+        }
     }
 
     [StringLength(4096)]
     public string LocalImageLink
     {
         get => this.localImageLink;
-        set => SetProperty(ref this.localImageLink, value, true);
+        set
+        {
+            SetProperty(ref this.localImageLink, value, true);
+
+            ClearErrors();
+            SetProperty(ref this.name, value);
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[LocalImageLink]");
+        }
     }
 
     [Required]
@@ -41,7 +57,14 @@ public partial class PlayerModel : BaseViewModel
     public string WebImageLink
     {
         get => this.webImageLink;
-        set => SetProperty(ref this.webImageLink, value, true);
+        set
+        {
+            SetProperty(ref this.webImageLink, value, true);
+
+            ClearErrors();
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[WebImageLink]");
+        }
     }
 
     [Required]
@@ -50,7 +73,14 @@ public partial class PlayerModel : BaseViewModel
     public string Club
     {
         get => this.club;
-        set => SetProperty(ref this.club, value, true);
+        set
+        {
+            SetProperty(ref this.club, value, true);
+
+            ClearErrors();
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[Club]");
+        }
     }
 
     [Required]
@@ -58,7 +88,14 @@ public partial class PlayerModel : BaseViewModel
     public string Birthday
     {
         get => this.birthday;
-        set => SetProperty(ref this.birthday, value, true);
+        set
+        {
+            SetProperty(ref this.birthday, value, true);
+
+            ClearErrors();
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[Birthday]");
+        }
     }
 
     [Required]
@@ -66,7 +103,14 @@ public partial class PlayerModel : BaseViewModel
     public string BirthPlace
     {
         get => this.birthPlace;
-        set => SetProperty(ref this.birthPlace, value, true);
+        set
+        {
+            SetProperty(ref this.birthPlace, value, true);
+
+            ClearErrors();
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[BirthPlace]");
+        }
     }
 
     [Required]
@@ -74,7 +118,14 @@ public partial class PlayerModel : BaseViewModel
     public int? Weight
     {
         get => this.weight;
-        set => SetProperty(ref this.weight, value, true);
+        set
+        {
+            SetProperty(ref this.weight, value, true);
+
+            ClearErrors();
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[Weight]");
+        }
     }
 
     [Required]
@@ -82,21 +133,42 @@ public partial class PlayerModel : BaseViewModel
     public double? Height
     {
         get => this.height;
-        set => SetProperty(ref this.height, value, true);
+        set
+        {
+            SetProperty(ref this.height, value, true);
+
+            ClearErrors();
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[Height]");
+        }
     }
 
     [Required]
     public string Description
     {
         get => this.description;
-        set => SetProperty(ref this.description, value, true);
+        set
+        {
+            SetProperty(ref this.description, value, true);
+
+            ClearErrors();
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[Description]");
+        }
     }
 
     [Required]
     public PositionModel Position
     {
         get => this.position;
-        set => SetProperty(ref this.position, value, true);
+        set
+        {
+            SetProperty(ref this.position, value, true);
+
+            ClearErrors();
+            ValidateAllProperties();
+            OnPropertyChanged("ErrorDictionary[Name]");
+        }
     }
 
     public PlayerModel() : base()
