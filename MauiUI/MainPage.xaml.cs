@@ -1,9 +1,11 @@
-﻿namespace MauiUI;
+﻿using Backend.Models.Messages;
+using CommunityToolkit.Mvvm.Messaging;
+
+namespace MauiUI;
 
 public partial class MainPage : ContentPage
 {
     private readonly IPlayerClient playerClient;
-
 
     private ObservableCollection<PlayerModel> players;
 
@@ -13,9 +15,14 @@ public partial class MainPage : ContentPage
 
         this.playerClient = playerClient;
 
-        MessagingCenter.Subscribe<PlayerListComponent, PlayerModel>(this, MobileEventBusKey.DeletePlayerAsync, async (sender, arg) =>
+        SubScribeOnDelte();
+    }
+
+    private void SubScribeOnDelte()
+    {
+        WeakReferenceMessenger.Default.Register<DeletePlayerMessage>(this, (recepient, messaage) =>
         {
-            await OnDelete(arg);
+            OnDelete(messaage);
         });
     }
 
@@ -32,12 +39,17 @@ public partial class MainPage : ContentPage
         await Shell.Current.GoToAsync(PageRoutes.AddOrUpdatePage);
     }
 
-    private async Task OnDelete(PlayerModel player)
+    private async Task OnDelete(DeletePlayerMessage message)
     {
+        if (message is null)
+            return;
+
+        var player = players.FirstOrDefault(x => x.Id == message.Id);
+
         if (player is null)
             return;
 
-        await playerClient.DeleteAsync(player.Id);
+        await playerClient.DeleteAsync(message.Id);
         
         var index = players.IndexOf(player);
         players.RemoveAt(index);

@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Hosting;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using Microsoft.Maui.Hosting;
 
 namespace MauiUI.Configurations;
 
@@ -8,6 +9,7 @@ public static class ConfigorationOfDI
     {
         //services
         builder.Services.AddSingleton<HttpClient>();
+        builder.Services.AddScoped<IMessenger, WeakReferenceMessenger>();
 
         builder.Services.AddTransient<IPlayerClient, PlayerClient>();
         builder.Services.AddTransient<IPositionClient, PositionClient>();

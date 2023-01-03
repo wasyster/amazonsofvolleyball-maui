@@ -1,4 +1,5 @@
-using Backend.Models.Common;
+using Backend.Models.Messages;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace MauiUI.Components;
 
@@ -29,6 +30,9 @@ public partial class PlayerListComponent : ContentView
 
     private void OnDeleteEventHandler(object sender, EventArgs e)
     {
-        MessagingCenter.Send<PlayerListComponent, PlayerModel>(this, MobileEventBusKey.DeletePlayerAsync, Player);
+        WeakReferenceMessenger.Default.Send<DeletePlayerMessage>(new DeletePlayerMessage
+        { 
+            Id = Player.Id
+        });
     }
 }
