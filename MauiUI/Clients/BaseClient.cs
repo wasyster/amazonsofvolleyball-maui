@@ -1,4 +1,10 @@
-﻿namespace MauiUI.Clients;
+﻿using System.Net.Http.Json;
+using System.Net.Mime;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace MauiUI.Clients;
 
 public abstract class BaseClient
 {
@@ -36,11 +42,7 @@ public abstract class BaseClient
             var uri = BuildUri(route);
 
             var response = await httpClient.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new Exception("Faild to fetch data.");
-            }
+            response.EnsureSuccessStatusCode();
 
             var content = await SerializeResponse<T>(response.Content);
             return content;
@@ -52,7 +54,7 @@ public abstract class BaseClient
     }
 
     /// <summary>
-    /// Creates a simple get request
+    /// Creates a simple get request with a url parameter
     /// </summary>
     /// <typeparam name="T">The return type</typeparam>
     /// <param name="route">The route part without the base url</param>
@@ -66,11 +68,7 @@ public abstract class BaseClient
             var uri = BuildUri(route, routParam);
 
             var response = await httpClient.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new Exception("Faild to fetch data.");
-            }
+            response.EnsureSuccessStatusCode();
 
             var content = await SerializeResponse<T>(response.Content);
             return content;
@@ -96,11 +94,55 @@ public abstract class BaseClient
             var uri = BuildUri(route, routParam);
 
             var response = await httpClient.DeleteAsync(uri);
+            response.EnsureSuccessStatusCode();
 
-            if (!response.IsSuccessStatusCode)
-            {
-                throw new Exception("Faild to delete data.");
-            }
+            return true;
+
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Sends a POST request to the specified route, containing the body serialized as a JSON in the request body
+    /// </summary>
+    /// <param name="route">The route part without the base url</param>
+    /// <param name="body">The request body object</param>
+    /// <returns></returns>
+    protected async Task<bool> SendPostRequest(string route, object body)
+    {
+        try
+        {
+            var request = BuildRequestMessage(HttpMethod.Post, route, body);
+
+            var response = await httpClient.SendAsync(request);
+            response.EnsureSuccessStatusCode();
+
+            return true;
+
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Sends a PUT request to the specified route, containing the body serialized as a JSON in the request body
+    /// </summary>
+    /// <param name="route">The route part without the base url</param>
+    /// <param name="body">The request body object</param>
+    /// <returns></returns>
+    protected async Task<bool> SendPutRequest(string route, object body)
+    {
+        try
+        {
+            var request = BuildRequestMessage(HttpMethod.Put, route, body);
+
+            var response = await httpClient.SendAsync(request);
+            response.EnsureSuccessStatusCode();
 
             return true;
 
@@ -128,6 +170,16 @@ public abstract class BaseClient
         httpClient.DefaultRequestHeaders.Accept.Add(new("application/json"));
 
         return httpClient;
+    }
+
+    private HttpRequestMessage BuildRequestMessage(HttpMethod httpMethod, string route, object body)
+    {
+        return new HttpRequestMessage
+        {
+            Method = httpMethod,
+            RequestUri = BuildUri(route),
+            Content = new StringContent(JsonSerializer.Serialize(body), Encoding.UTF8, MediaTypeNames.Application.Json)
+        };
     }
 
     private Uri BuildUri(string route)

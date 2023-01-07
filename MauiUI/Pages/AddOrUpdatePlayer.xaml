@@ -31,7 +31,7 @@
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Position" />
                 <Picker x:Name="position" Title="Select..."
-                        ItemDisplayBinding="{Binding Name}"
+                        ItemDisplayBinding="{Binding Name, Mode=TwoWay}"
                         SelectedItem="{Binding Position}">
                 </Picker>
                 <Label x:Name="lblValidationErrorPosition" TextColor="red" Text="{Binding [Position].Error}"/>

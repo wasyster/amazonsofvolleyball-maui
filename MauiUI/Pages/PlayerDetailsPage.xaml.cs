@@ -23,4 +23,14 @@ public partial class PlayerDetailsPage : ContentPage
     {
         BindingContext = player;
     }
+
+    private async void OnUpdate(object sender, EventArgs e)
+    {
+        var navigationParameter = new Dictionary<string, object>
+        {
+            { "player", Player}
+        };
+
+        await Shell.Current.GoToAsync(PageRoutes.AddOrUpdatePage, navigationParameter);
+    }
 }

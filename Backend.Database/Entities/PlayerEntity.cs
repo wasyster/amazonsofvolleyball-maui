@@ -12,9 +12,6 @@ public class PlayerEntity
     [StringLength(255)]
     public string Name { get; set; }
 
-    [StringLength(4069)]
-    public string LocalImageLink { get; set; }
-
     [Required]
     [StringLength(4069)]
     public string WebImageLink { get; set; }

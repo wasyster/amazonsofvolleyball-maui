@@ -4,7 +4,6 @@ public partial class PlayerModel : BaseViewModel
 {
     private int id;
     private string name;
-    private string localImageLink;
     private string webImageLink;
     private string club;
     private string birthday;
@@ -34,21 +33,6 @@ public partial class PlayerModel : BaseViewModel
             SetProperty(ref this.name, value);
             ValidateAllProperties();
             OnPropertyChanged("ErrorDictionary[Name]");
-        }
-    }
-
-    [StringLength(4096)]
-    public string LocalImageLink
-    {
-        get => this.localImageLink;
-        set
-        {
-            SetProperty(ref this.localImageLink, value, true);
-
-            ClearErrors();
-            SetProperty(ref this.name, value);
-            ValidateAllProperties();
-            OnPropertyChanged("ErrorDictionary[LocalImageLink]");
         }
     }
 
@@ -174,11 +158,10 @@ public partial class PlayerModel : BaseViewModel
     public PlayerModel() : base()
     {}
 
-    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, string positionName, int positionId) : base()
+    public PlayerModel(int id, string name, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, string positionName, int positionId) : base()
     {
         Id = id;
         Name = name;
-        LocalImageLink = localImageLink;
         WebImageLink = webImageLink;
         Club = club;
         Birthday = birthday;
@@ -189,11 +172,10 @@ public partial class PlayerModel : BaseViewModel
         Position = new PositionModel(positionId, positionName);
     }
 
-    public PlayerModel(int id, string name, string localImageLink, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position) : base()
+    public PlayerModel(int id, string name, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, PositionModel position) : base()
     {
         Id = id;
         Name = name;
-        LocalImageLink = localImageLink;
         WebImageLink = webImageLink;
         Club = club;
         Birthday = birthday;
@@ -208,7 +190,6 @@ public partial class PlayerModel : BaseViewModel
     {
         Id = player.Id;
         Name = player.Name;
-        LocalImageLink = player.LocalImageLink;
         WebImageLink = player.WebImageLink;
         Club = player.Club;
         Birthday = player.Birthday;
@@ -225,7 +206,6 @@ public partial class PlayerModel : BaseViewModel
         {
             Id = Id,
             Name = Name,
-            LocalImageLink = LocalImageLink,
             WebImageLink = WebImageLink,
             Club = Club,
             Birthday = Birthday,
@@ -233,7 +213,7 @@ public partial class PlayerModel : BaseViewModel
             Weight = Weight.Value,
             Height = Height.Value,
             Description = Description,
-            Position = Position.ToEntity()
+            PositionId = Position.Id
         };
     }
 
@@ -241,7 +221,6 @@ public partial class PlayerModel : BaseViewModel
     {
         player.Id = Id;
         player.Name = Name;
-        player.LocalImageLink = LocalImageLink;
         player.WebImageLink = WebImageLink;
         player.Club = Club;
         player.Birthday = Birthday;
@@ -250,6 +229,6 @@ public partial class PlayerModel : BaseViewModel
         player.Height = Height.Value;
         player.Description = Description;
 
-        player.Position = Position.ToEntity();
+        player.PositionId = Position.Id;
     }
 }

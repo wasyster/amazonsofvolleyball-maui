@@ -12,7 +12,7 @@ public class PlayerClient : BaseClient, IPlayerClient
 
     public async Task<bool> CreateAsync(PlayerModel player)
     {
-        throw new NotImplementedException();
+        return await SendPostRequest(EndPoints.Player.CreateAsync, player);
     }
 
     public async Task<bool> DeleteAsync(int id)
@@ -22,16 +22,16 @@ public class PlayerClient : BaseClient, IPlayerClient
 
     public async Task<PlayerModel> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+        return await SendGetRequestAsync<PlayerModel>(EndPoints.Player.GetByIdAsync, id);
     }
 
     public async Task<List<PlayerModel>> PageAsync(int page)
     {
-        throw new NotImplementedException();
+        return await SendGetRequestAsync<List<PlayerModel>>(EndPoints.Player.GetPageAsync, page);
     }
 
     public async Task<bool> UpdateAsync(PlayerModel player)
     {
-        throw new NotImplementedException();
+        return await SendPutRequest(EndPoints.Player.UpdateAsync, player);
     }
 }

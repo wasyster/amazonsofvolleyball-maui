@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221222114446_initial")]
+    [Migration("20230107130958_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -56,11 +56,6 @@ namespace Backend.Database.Migrations
 
                     b.Property<double>("Height")
                         .HasColumnType("float");
-
-                    b.Property<string>("LocalImageLink")
-                        .IsRequired()
-                        .HasMaxLength(4069)
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

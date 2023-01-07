@@ -54,11 +54,6 @@ namespace Backend.Database.Migrations
                     b.Property<double>("Height")
                         .HasColumnType("float");
 
-                    b.Property<string>("LocalImageLink")
-                        .IsRequired()
-                        .HasMaxLength(4069)
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255)

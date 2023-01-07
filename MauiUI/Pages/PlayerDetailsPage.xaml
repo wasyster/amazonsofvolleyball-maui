@@ -9,6 +9,10 @@
         <local:PlayerModel />
     </ContentPage.BindingContext>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="update.svg" Clicked="OnUpdate" Command="{Binding ValidateCommand}" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <StackLayout BackgroundColor="Black">
             <Border Stroke="Black"

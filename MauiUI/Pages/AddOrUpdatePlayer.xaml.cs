@@ -30,19 +30,18 @@ public partial class AddOrUpdatePlayer : ContentPage
         this.positionClient = positionClient;
         this.playerClient = playerClient;
 
-		SetUpControls();
-		SetTitle();
-		SetActionPointer();
-
         player ??= new PlayerModel();
     }
 
 	protected async override void OnAppearing()
 	{
-        BindingContext = player;
-        player.ValidationCompleted += OnValidationHandler;
-
         await SetUpPositionPicker();
+        SetUpControls();
+        SetTitle();
+        SetActionPointer();
+
+        player.ValidationCompleted += OnValidationHandler;
+        BindingContext = player;
     }
 
     private void SetUpControls()
@@ -60,7 +59,7 @@ public partial class AddOrUpdatePlayer : ContentPage
 	{
         Title = this.player is null ?
                 "Add new player" :
-                 $"Update {player?.Name}";
+                $"Update {player?.Name}";
     }
 
 	private void SetActionPointer()
@@ -72,19 +71,24 @@ public partial class AddOrUpdatePlayer : ContentPage
 
 	private async Task AddNewPlayer()
 	{
-        //var result = await playerClient.CreateAsync(player);
+        var result = await playerClient.CreateAsync(player);
 
-        //if (!result)
-        //    return;
+        if (!result)
+            return;
     }
 
     private async Task UpdatePlayer()
-    { }
+    {
+        var result = await playerClient.UpdateAsync(player);
+
+        if (!result)
+            return;
+    }
 
     private async void OnSaveClick(object sender, EventArgs e)
     {
-        //if (player?.HasErrors ?? true)
-        //    return;
+        if (player?.HasErrors ?? true)
+            return;
 
 		await asyncAction();
     }

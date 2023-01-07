@@ -1,7 +1,4 @@
-﻿using Backend.Models.Messages;
-using CommunityToolkit.Mvvm.Messaging;
-
-namespace MauiUI;
+﻿namespace MauiUI;
 
 public partial class MainPage : ContentPage
 {
