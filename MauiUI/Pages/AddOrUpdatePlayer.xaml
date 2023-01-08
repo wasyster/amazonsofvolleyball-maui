@@ -18,7 +18,7 @@
         <VerticalStackLayout>
             <VerticalStackLayout>
                 <Label Text="Name" />
-                <Entry x:Name="name" Text="{Binding Name}"
+                <Entry x:Name="name" Text="{Binding Name, Mode=TwoWay}"
                        ClearButtonVisibility="WhileEditing">
                     <Entry.Behaviors>
                         <toolkit:EventToCommandBehavior
@@ -31,14 +31,13 @@
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Position" />
                 <Picker x:Name="position" Title="Select..."
-                        ItemDisplayBinding="{Binding Name, Mode=TwoWay}"
-                        SelectedItem="{Binding Position}">
-                </Picker>
+                        ItemDisplayBinding="{Binding Name}"
+                        SelectedItem="{Binding Position, Mode=TwoWay}" />
                 <Label x:Name="lblValidationErrorPosition" TextColor="red" Text="{Binding [Position].Error}"/>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Club" />
-                <Entry x:Name="club" Text="{Binding Club}" 
+                <Entry x:Name="club" Text="{Binding Club, Mode=TwoWay}" 
                        ClearButtonVisibility="WhileEditing">
                     <Entry.Behaviors>
                         <toolkit:EventToCommandBehavior
@@ -50,11 +49,11 @@
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Birthday" />
-                <DatePicker  x:Name="birthday" Date="{Binding Birthday}"/>
+                <DatePicker  x:Name="birthday" Date="{Binding Birthday, Mode=TwoWay}"/>
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Birth place" />
-                <Entry x:Name="birthplace" Text="{Binding BirthPlace}" 
+                <Entry x:Name="birthplace" Text="{Binding BirthPlace, Mode=TwoWay}" 
                        ClearButtonVisibility="WhileEditing">
                     <Entry.Behaviors>
                         <toolkit:EventToCommandBehavior
@@ -66,7 +65,7 @@
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Weight" />
-                <Entry x:Name="weight" Text="{Binding Weight}"
+                <Entry x:Name="weight" Text="{Binding Weight, Mode=TwoWay}"
                        ClearButtonVisibility="WhileEditing" Keyboard="Numeric">
                     <Entry.Behaviors>
                         <toolkit:EventToCommandBehavior
@@ -78,7 +77,7 @@
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Height" />
-                <Entry x:Name="height" Text="{Binding Height}" 
+                <Entry x:Name="height" Text="{Binding Height, Mode=TwoWay}" 
                        ClearButtonVisibility="WhileEditing" Keyboard="Numeric">
                     <Entry.Behaviors>
                         <toolkit:EventToCommandBehavior
@@ -90,7 +89,7 @@
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Image link" />
-                <Entry x:Name="webImageLink" Text="{Binding WebImageLink}"
+                <Entry x:Name="webImageLink" Text="{Binding WebImageLink, Mode=TwoWay}"
                        ClearButtonVisibility="WhileEditing">
                     <Entry.Behaviors>
                         <toolkit:EventToCommandBehavior
@@ -102,7 +101,7 @@
             </VerticalStackLayout>
             <VerticalStackLayout Margin="0,10">
                 <Label Text="Description" />
-                <Editor x:Name="description" Text="{Binding Description}"
+                <Editor x:Name="description" Text="{Binding Description, Mode=TwoWay}"
                         AutoSize="TextChanges">
                     <Editor.Behaviors>
                         <toolkit:EventToCommandBehavior

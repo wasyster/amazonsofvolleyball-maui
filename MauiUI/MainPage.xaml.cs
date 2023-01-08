@@ -3,14 +3,18 @@
 public partial class MainPage : ContentPage
 {
     private readonly IPlayerClient playerClient;
+    private readonly IPositionClient positionClient;
+    private readonly IMemoryCache memoryCache;
 
     private ObservableCollection<PlayerModel> players;
 
-    public MainPage(IPlayerClient playerClient)
+    public MainPage(IPlayerClient playerClient, IPositionClient positionClient, IMemoryCache memoryCache)
     {
         InitializeComponent();
 
         this.playerClient = playerClient;
+        this.positionClient = positionClient;
+        this.memoryCache = memoryCache;
 
         SubScribeOnDelte();
     }
@@ -29,6 +33,23 @@ public partial class MainPage : ContentPage
 
         players = new ObservableCollection<PlayerModel>(await playerClient.GetAllAsync());
         collectionView.ItemsSource = players;
+
+        await LoadCacheData();
+    }
+
+    private async Task LoadCacheData()
+    {
+        var cacheEntryOptions = new MemoryCacheEntryOptions()
+        .SetSlidingExpiration(TimeSpan.FromSeconds(3600))
+        .SetAbsoluteExpiration(TimeSpan.FromSeconds(3600))
+        .SetPriority(CacheItemPriority.Normal)
+        .SetSize(1024);
+
+        if (!memoryCache.TryGetValue(CacheKeys.Positions, out List<PositionModel> positions))
+        {
+            positions = await this.positionClient.GetAllAsync();
+            memoryCache.Set(CacheKeys.Positions, positions, cacheEntryOptions);
+        }
     }
 
     private async void OnAddNew(object sender, EventArgs e)

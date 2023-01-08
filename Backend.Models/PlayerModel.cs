@@ -151,12 +151,13 @@ public partial class PlayerModel : BaseViewModel
 
             ClearErrors();
             ValidateAllProperties();
-            OnPropertyChanged("ErrorDictionary[Name]");
+            OnPropertyChanged("ErrorDictionary[Position]");
         }
     }
 
     public PlayerModel() : base()
-    {}
+    {
+    }
 
     public PlayerModel(int id, string name, string webImageLink, string club, string birthday, string birthPlace, int weight, double height, string description, string positionName, int positionId) : base()
     {

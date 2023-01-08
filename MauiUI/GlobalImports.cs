@@ -9,6 +9,7 @@ global using System.Collections.ObjectModel;
 global using CommunityToolkit.Maui;
 global using System.Net.Http.Headers;
 global using CommunityToolkit.Mvvm.Messaging;
+global using Microsoft.Extensions.Caching.Memory;
 
 global using Backend.Models.Messages;
 global using Backend.Infrastructure.Clients.Services;
@@ -21,3 +22,4 @@ global using MauiUI.Pages;
 global using MauiUI.Components;
 global using Backend.Infrastructure.Constants;
 global using Backend.Models.Common;
+global using MauiUI.Storage;
