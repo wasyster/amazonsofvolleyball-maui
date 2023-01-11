@@ -40,7 +40,6 @@ public partial class AddOrUpdatePlayer : ContentPage
     {
         viewModel ??= new PlayerModel();
         viewModel.ValidationCompleted += OnValidationHandler;
-        viewModel.Position = positions.Find(x => x.Id == viewModel.Position.Id);
 
         BindingContext = viewModel;
 

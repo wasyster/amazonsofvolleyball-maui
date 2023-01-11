@@ -1,6 +1,6 @@
 ﻿namespace Backend.Models;
 
-public class PositionModel
+public class PositionModel : IEquatable<PositionModel>
 {
     [Required]
     [Range(1, 7)]
@@ -40,4 +40,7 @@ public class PositionModel
         entity.Id = Id;
         entity.Name = Name;
     }
+
+    public bool Equals(PositionModel? position) => this.Id == position?.Id &&
+                                                   this.Name == position?.Name;
 }
