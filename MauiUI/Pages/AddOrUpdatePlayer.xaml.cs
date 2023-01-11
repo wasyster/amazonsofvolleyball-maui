@@ -1,18 +1,21 @@
 namespace MauiUI.Pages;
 
-[QueryProperty(nameof(Player), "player")]
+[QueryProperty(nameof(ViewModel), "viewModel")]
 public partial class AddOrUpdatePlayer : ContentPage
 {
-    private PlayerModel player;
-    public PlayerModel Player
+    private PlayerModel viewModel;
+    public PlayerModel ViewModel
     {
-        get => player;
+        get => viewModel;
         set
         {
-            player = value;
-            OnPropertyChanged("player");
+            viewModel = value;
+            OnPropertyChanged("viewModel");
         }
     }
+
+    private List<PositionModel> positions = new List<PositionModel>();
+    
 
     private readonly IMemoryCache memoryCache;
     private readonly IPlayerClient playerClient;
@@ -27,20 +30,19 @@ public partial class AddOrUpdatePlayer : ContentPage
         this.memoryCache = memoryCache;
         this.playerClient = playerClient;
 
+        memoryCache.TryGetValue(CacheKeys.Positions, out positions);
+
         InitializeComponent();
         SetUpControls();
     }
 
     protected override void OnAppearing()
     {
-        player ??= new PlayerModel();
-        player.ValidationCompleted += OnValidationHandler;
+        viewModel ??= new PlayerModel();
+        viewModel.ValidationCompleted += OnValidationHandler;
+        viewModel.Position = positions.Find(x => x.Id == viewModel.Position.Id);
 
-        var positionIndex = GetIndexForPositionPicker();
-
-        BindingContext = player;
-
-        position.SelectedIndex = positionIndex;
+        BindingContext = viewModel;
 
         SetUpControls();
         SetTitle();
@@ -53,34 +55,26 @@ public partial class AddOrUpdatePlayer : ContentPage
         birthday.MinimumDate = new DateTime(1900, 1, 1);
         birthday.MaximumDate = DateTime.Now.Date.AddDays(-1);
 
-        memoryCache.TryGetValue(CacheKeys.Positions, out List<PositionModel> positions);
         position.ItemsSource = positions;
-    }
-
-    private int GetIndexForPositionPicker()
-    {
-        memoryCache.TryGetValue(CacheKeys.Positions, out List<PositionModel> positions);
-        var selectedPosition = positions.FirstOrDefault(x => x.Id == player?.Position?.Id);
-        return positions.IndexOf(selectedPosition);
     }
 
     private void SetTitle()
     {
-        Title = this.player?.Id == 0 ?
+        Title = this.viewModel?.Id == 0 ?
                 "Add new player" :
-                $"Update {player?.Name}";
+                $"Update {viewModel?.Name}";
     }
 
     private void SetActionPointer()
     {
-        asyncAction = this.player?.Id == 0 ?
+        asyncAction = this.viewModel?.Id == 0 ?
                       AddNewPlayer :
                       UpdatePlayer;
     }
 
     private async Task AddNewPlayer()
     {
-        var result = await playerClient.CreateAsync(player);
+        var result = await playerClient.CreateAsync(viewModel);
 
         if (!result)
         {
@@ -93,7 +87,7 @@ public partial class AddOrUpdatePlayer : ContentPage
 
     private async Task UpdatePlayer()
     {
-        var result = await playerClient.UpdateAsync(player);
+        var result = await playerClient.UpdateAsync(viewModel);
 
         if (!result)
         {
@@ -106,7 +100,7 @@ public partial class AddOrUpdatePlayer : ContentPage
 
     private async void OnSaveClick(object sender, EventArgs e)
     {
-        if (player?.HasErrors ?? true)
+        if (viewModel?.HasErrors ?? true)
             return;
 
         await asyncAction();

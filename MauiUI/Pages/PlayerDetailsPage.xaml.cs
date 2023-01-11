@@ -28,7 +28,7 @@ public partial class PlayerDetailsPage : ContentPage
     {
         var navigationParameter = new Dictionary<string, object>
         {
-            { "player", Player}
+            { "viewModel", Player}
         };
 
         await Shell.Current.GoToAsync(PageRoutes.AddOrUpdatePage, navigationParameter);
